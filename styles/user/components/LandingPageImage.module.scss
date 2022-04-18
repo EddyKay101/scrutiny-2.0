@@ -1,0 +1,43 @@
+.main-svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    opacity: 0;
+}
+
+.headphone-bar {
+    fill: none;
+    stroke: $scrutiny-dark-grey;
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.phone-casing {
+    fill: $scrutiny-midnight-blue;
+}
+
+.st2 {
+    fill: $scrutiny-dark-grey;
+}
+
+.golden {
+    fill: $scrutiny-gold;
+}
+
+.scrut-text {
+    fill: $scrutiny-midnight-blue;
+}
+
+.wave-line {
+    fill: none;
+    stroke: $scrutiny-midnight-blue;
+    stroke-width: 8;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    position: absolute;
+    top: 25%;
+    right: 36%;
+    transform: translate(36%, 25%);
+}
