@@ -1,15 +1,19 @@
-.container-fluid {
-    // background-color: #cccccc;
-    // background-color: $scrutiny-grey;
+.main-content {
+    background-color: $scrutiny-grey;
     height: 100vh;
     position: relative;
-}
-.container__image-container {
-    // background-color: red;
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translateY(-50%);
-    // display: none;
+
+    &__entry {
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        min-height: 500px;
+    }
+
+    &__image-and-options {
+        height: 100%;
+    }
 }

@@ -1,43 +1,55 @@
-.main-svg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    opacity: 0;
-}
+.svg-container {
+    width: 330px;
+    height: 100%;
+    margin: auto;
+    position: relative;
 
-.headphone-bar {
-    fill: none;
-    stroke: $scrutiny-dark-grey;
-    stroke-width: 14;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
-}
+    & .main-svg {
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        opacity: 0;
 
-.phone-casing {
-    fill: $scrutiny-midnight-blue;
-}
+        // @media only screen and (max-width: $breakpoint-mobile) {
+        //     width: 100%;
+        // }
 
-.st2 {
-    fill: $scrutiny-dark-grey;
-}
+        & .headphone-bar {
+            fill: none;
+            stroke: $scrutiny-dark-grey;
+            stroke-width: 14;
+            stroke-linecap: round;
+            stroke-miterlimit: 10;
+        }
 
-.golden {
-    fill: $scrutiny-gold;
-}
+        .phone-casing {
+            fill: $scrutiny-midnight-blue;
+        }
 
-.scrut-text {
-    fill: $scrutiny-midnight-blue;
-}
+        .st2 {
+            fill: $scrutiny-dark-grey;
+        }
 
-.wave-line {
-    fill: none;
-    stroke: $scrutiny-midnight-blue;
-    stroke-width: 8;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-    position: absolute;
-    top: 25%;
-    right: 36%;
-    transform: translate(36%, 25%);
+        .golden {
+            fill: $scrutiny-gold;
+        }
+
+        .scrut-text {
+            fill: $scrutiny-midnight-blue;
+        }
+
+        .wave-line {
+            fill: none;
+            stroke: $scrutiny-midnight-blue;
+            stroke-width: 8;
+            stroke-linejoin: round;
+            stroke-miterlimit: 10;
+            position: absolute;
+            top: 25%;
+            right: 36%;
+            transform: translate(36%, 25%);
+        }
+    }
 }
