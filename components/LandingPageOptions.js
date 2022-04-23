@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, createContext, useContext } from 'react';
-import { gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
+import { gsap, Expo } from 'gsap';
 import OptionPanel from './OptionPanel';
 
 export default function LandingPageOptions({ display }) {
@@ -12,11 +12,10 @@ export default function LandingPageOptions({ display }) {
             delay: 5
         })
         tlEntry.to(entry.current, {
-            delay: 0.3,
             display: 'block',
             height: '100%',
-            animationTimingFunction: 'ease-out',
-        })
+            ease: Expo.easeOut
+        }, '+=0.2')
     })
 
     return (
@@ -24,11 +23,11 @@ export default function LandingPageOptions({ display }) {
             <div className="container entry-options__entry-container">
                 <OptionPanel
                     message="Continue to Scrutiny"
-                    src="@/components/videos/scrutiny_video.mp4"
+                    src="/videos/scrutiny_video.mp4"
                 />
                 <OptionPanel
                     message="Continue to Scrutiny"
-                    src="@/components/videos/scrutiny_video.mp4"
+                    src=""
                 />
             </div>
         </div>

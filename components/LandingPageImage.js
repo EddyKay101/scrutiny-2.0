@@ -18,7 +18,6 @@ const LandingPageImage = ({ setDisplay }) => {
     const [isLoaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        setDisplay('block');
         setLoaded(true);
         if (isLoaded) {
             let numberOfWavePoints = 60;
@@ -128,7 +127,6 @@ const LandingPageImage = ({ setDisplay }) => {
                 delay: 5,
                 display: 'none'
             });
-            setDisplay('none');
         }
 
     }, [isLoaded, setDisplay])
