@@ -6,5 +6,20 @@
 
 /* put the font family in the body selector for the universal font, these will be inherited by child elements*/
 html {
+    background-color: $scrutiny-grey;
     font-size: 62.5%;
+}
+
+h3 {
+    font-size: 2.5em;
+
+    @media screen and (max-width: $breakpoint-small-screens) {
+        font-size: 1.5em;
+    }
+    @media only screen and (max-width: 280px) {
+        font-size: 1.2em;
+    }
+    @media only screen and (max-width: 653px) and (max-height: 280px) {
+        font-size: 1.3em;
+    }
 }

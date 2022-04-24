@@ -35,7 +35,7 @@ export default function OptionPanel({ src, message }) {
 
 
     return (
-        <div className="container opt col-md-3 col-sm-12 col-xs-12">
+        <div className="container opt col-lg-4 col-md-5 col-sm-6 col-xs-12">
             <div className="option " ref={option} onMouseOver={mouseOver} onMouseOut={mouseOut}>
                 <div className="option__option-message" ref={optionMessage}>
                     <h3 className="option__message">{message}</h3>
