@@ -26,7 +26,7 @@ export default function LandingPageOptions({ display }) {
                     src="/videos/scrutiny_video.mp4"
                 />
                 <OptionPanel
-                    message="Continue to Scrutiny"
+                    message="Music Player"
                     src=""
                 />
             </div>

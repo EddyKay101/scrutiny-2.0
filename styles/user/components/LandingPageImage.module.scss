@@ -4,6 +4,13 @@
     margin: auto;
     position: relative;
 
+    @media only screen and (max-width: 280px) {
+        width: 100%;
+    }
+    @media only screen and (max-width: 653px) and (max-height: 280px) {
+        width: 100%;
+    }
+
     & .main-svg {
         position: absolute;
         display: block;
@@ -12,9 +19,9 @@
         width: 100%;
         opacity: 0;
 
-        // @media only screen and (max-width: $breakpoint-mobile) {
-        //     width: 100%;
-        // }
+        @media only screen and (max-width: 653px) and (max-height: 280px) {
+            height: 230px;
+        }
 
         & .headphone-bar {
             fill: none;
