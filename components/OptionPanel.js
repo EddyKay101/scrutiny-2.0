@@ -6,7 +6,7 @@ export default function OptionPanel({ src, message }) {
     const optionMessage = useRef();
     const video = useRef();
     const tlOption = gsap.timeline();
-    const mouseOver = async (e) => {
+    const mouseOver = async () => {
         video.current.autoplay = true;
         video.current.load();
         await tlOption.to(option.current, {
@@ -18,11 +18,11 @@ export default function OptionPanel({ src, message }) {
             animationTimingFunction: 'ease-in'
         });
     }
-    const mouseOut = async (e) => {
+    const mouseOut = async () => {
         video.current.autoplay = false;
         video.current.load();
         await tlOption.to(option.current, {
-            boxShadow: 'none',
+            boxShadow: '0 5px 10px rgba(0, 0, 0, .2)',
             animationTimingFunction: 'ease-out',
             overwrite: true
         });
@@ -33,10 +33,18 @@ export default function OptionPanel({ src, message }) {
         });
     }
 
+    const panelClick = () => {
+        tlOption.to(option.current, {
+            boxShadow: '0 5px 10px rgba(0, 0, 0, .2)',
+            transform: 'translateY(-1px)',
+            animationTimingFunction: 'ease-in'
+        })
+    }
+
 
     return (
         <div className="container opt col-lg-4 col-md-5 col-sm-6 col-xs-12">
-            <div className="option " ref={option} onMouseOver={mouseOver} onMouseOut={mouseOut}>
+            <div className="option" ref={option} onMouseOver={mouseOver} onMouseOut={mouseOut} onClick={panelClick}>
                 <div className="option__option-message" ref={optionMessage}>
                     <h3 className="option__message">{message}</h3>
                 </div>

@@ -27,7 +27,7 @@ export default function LandingPageOptions({ display }) {
                 />
                 <OptionPanel
                     message="Music Player"
-                    src=""
+                    src="/videos/musicplayerscreen.mp4"
                 />
             </div>
         </div>
