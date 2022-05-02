@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap, Expo } from 'gsap';
 import OptionPanel from './OptionPanel';
 
-export default function LandingPageOptions({ display }) {
+export default function LandingPageOptions() {
     const entry = useRef();
 
     useEffect(() => {
@@ -24,10 +24,12 @@ export default function LandingPageOptions({ display }) {
                 <OptionPanel
                     message="Continue to Scrutiny"
                     src="/videos/scrutiny_video.mp4"
+                    link="/home"
                 />
                 <OptionPanel
                     message="Music Player"
                     src="/videos/musicplayerscreen.mp4"
+                    link=""
                 />
             </div>
         </div>
