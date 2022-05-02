@@ -13,7 +13,7 @@ export default function Layout({ title, keywords, description, children }) {
                 <meta name='keywords' content={keywords} />
             </Head>
 
-            <div className={styles.container}>
+            <div className="container">
                 {children}
             </div>
         </div>

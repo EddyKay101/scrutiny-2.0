@@ -1,20 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap, Elastic } from 'gsap';
 
-const LandingPageImage = ({ setDisplay }) => {
+const LandingPageImage = () => {
 
 
-    const svgContainer = useRef();
-    const waveLine = useRef();
-    const mainSVG = useRef();
-    const wire = useRef();
-    const scrutText = useRef();
-    const leftEar = useRef();
-    const rightEar = useRef();
-    const leftEarBar = useRef();
-    const leftEarBarTwo = useRef();
-    const rightEarBar = useRef();
-    const rightEarBarTwo = useRef();
+    const svgContainer = useRef<HTMLHeadingElement>();
+    const waveLine = useRef<SVGPolylineElement>();
+    const mainSVG = useRef<SVGSVGElement>();
+    const wire = useRef<SVGPathElement>();
+    const scrutText = useRef<SVGPathElement>();
+    const leftEar = useRef<SVGPathElement>();
+    const rightEar = useRef<SVGPathElement>();
+    const leftEarBar = useRef<SVGPolygonElement>();
+    const leftEarBarTwo = useRef<SVGPolygonElement>();
+    const rightEarBar = useRef<SVGPolygonElement>();
+    const rightEarBarTwo = useRef<SVGPolygonElement>();
     const [isLoaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -129,7 +129,7 @@ const LandingPageImage = ({ setDisplay }) => {
             });
         }
 
-    }, [isLoaded, setDisplay])
+    }, [isLoaded])
 
 
 
