@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overscroll-behavior: none;
 }
 
 /* put the font family in the body selector for the universal font, these will be inherited by child elements*/

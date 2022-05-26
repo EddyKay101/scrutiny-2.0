@@ -41,11 +41,16 @@ export default function OptionPanel({ src, message, link }: Panel) {
     }
 
     const panelClick = () => {
+
         tlOption.to(option.current, {
             boxShadow: '0 5px 10px rgba(0, 0, 0, .2)',
             transform: 'translateY(-1px)',
             animationTimingFunction: 'ease-in'
-        })
+        });
+        const now = new Date()
+
+        localStorage.setItem('state', 'active');
+
     }
 
 

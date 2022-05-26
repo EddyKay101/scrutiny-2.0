@@ -1,31 +1,50 @@
+import { useContext, useEffect, useState } from 'react';
+import { SessionContext } from '@/contexts/SessionContext';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Spinner from '@/components/Spinner';
+import HomePage from './home';
 import LandingPageImage from '@/components/LandingPageImage';
 import LandingPageOptions from '@/components/LandingPageOptions';
 export default function LandingPage() {
+  const sess = useContext(SessionContext);
+  const [loaded, setLoaded] = useState(false)
   const router = useRouter();
+
+  useEffect(() => {
+    sess === false ? setLoaded(false) : setLoaded(true);
+  }, [sess])
+
+
   return (
     <div>
-      <Head>
-        <title>Scrutiny | Welcome</title>
-        <link rel="icon" href="/favicon.svg" type="image/svg" sizes="32x32" />
-      </Head>
 
-      <div className="container-fluid main-content">
-        <div className="container-fluid main-content__entry">
-          <div className="main-content__image-and-options">
-            <LandingPageImage />
-            <LandingPageOptions />
+      {
+        loaded === false ?
+          <div>
+            <Head>
+              <title>Scrutiny | Welcome</title>
+              <link rel="icon" href="/favicon.svg" type="image/svg" sizes="32x32" />
+            </Head>
+
+            <div className="container-fluid main-content">
+              <div className="container-fluid main-content__entry">
+                <div className="main-content__image-and-options">
+                  <LandingPageImage />
+                  <LandingPageOptions />
+                </div>
+              </div>
+
+            </div>
           </div>
-        </div>
+          :
+          <HomePage />
 
-      </div>
+
+
+      }
+
 
     </div>
   )
 }
 
-// LandingPage.getInitialProps = async () => {
-
-// }

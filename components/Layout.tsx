@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Header from './Header';
 
-
-export default function Layout({ title, keywords, description, children }) {
+export default function Layout({ title, keywords, description, children, location }) {
 
     const router = useRouter();
     return (
@@ -11,9 +11,10 @@ export default function Layout({ title, keywords, description, children }) {
                 <title>{title}</title>
                 <meta name='description' content={description} />
                 <meta name='keywords' content={keywords} />
+                <link rel="icon" href="/favicon.svg" type="image/svg" sizes="32x32" />
             </Head>
-
-            <div className="container">
+            <Header />
+            <div className={`container-fluid ${location}`}>
                 {children}
             </div>
         </div>
@@ -21,7 +22,7 @@ export default function Layout({ title, keywords, description, children }) {
 }
 
 Layout.defaultProps = {
-    title: 'Scrutiny | Find the hottest parties',
+    title: 'Scrutiny | Scrutiny NG',
     description: 'Find the latest music critisism',
     keywords: 'music, good music, dj'
 }
