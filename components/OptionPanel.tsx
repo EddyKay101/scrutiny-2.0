@@ -55,7 +55,7 @@ export default function OptionPanel({ src, message, link }: Panel) {
 
 
     return (
-        <div className="container opt col-lg-4 col-md-5 col-sm-6 col-xs-12">
+        <div className="opt col-lg-4 col-md-5 col-xs-12">
             <Link href={link} passHref={true}>
                 <a>
                     <div className="option" ref={option} onMouseOver={mouseOver} onMouseOut={mouseOut} onClick={panelClick}>

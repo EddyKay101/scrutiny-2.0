@@ -19,8 +19,9 @@ export default function LandingPageOptions() {
     })
 
     return (
-        <div className="container-fluid entry-options" ref={entry}>
-            <div className="container entry-options__entry-container">
+        <div className="container entry-options" ref={entry}>
+            <div className="row entry-options__entry-container justify-content-around">
+
                 <OptionPanel
                     message="Continue to Scrutiny"
                     src="/videos/scrutiny_video.mp4"
@@ -31,7 +32,9 @@ export default function LandingPageOptions() {
                     src="/videos/musicplayerscreen.mp4"
                     link="/"
                 />
+
             </div>
+
         </div>
 
 

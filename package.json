@@ -22,7 +22,6 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "sass": "^1.49.11",
-    "social-media-icons-react": "^1.1.10",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

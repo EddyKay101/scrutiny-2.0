@@ -4,17 +4,17 @@
 
     &__entry-container {
         height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-evenly;
         width: 100%;
         margin: auto;
         align-items: center;
-        @media only screen and (max-width: $breakpoint-mobile) {
-            flex-direction: column;
-        }
-        @media only screen and (max-width: $breakpoint-tablet) {
-            justify-content: space-around;
-        }
+        // @media only screen and (max-width: $breakpoint-mobile) {
+        //     flex-direction: column;
+        // }
+        // @media only screen and (max-width: $breakpoint-tablet) {
+        //     justify-content: space-around;
+        // }
     }
 }
