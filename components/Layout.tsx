@@ -13,7 +13,7 @@ export default function Layout({ title, keywords, description, children, locatio
                 <meta name='keywords' content={keywords} />
                 <link rel="icon" href="/favicon.svg" type="image/svg" sizes="32x32" />
             </Head>
-            {/* <Header /> */}
+            <Header />
             <div className={`container-fluid ${location}`}>
                 {children}
             </div>
