@@ -64,10 +64,6 @@
                     color: $scrutiny-midnight-blue;
                     display: inline-block;
                     transition: 0.2s;
-                    // box-shadow: 0px 0px 2px #888;
-                    &:hover {
-                        box-shadow: 2px 0px 0px $scrutiny-midnight-blue;
-                    }
                 }
                 .utility-bars {
                     padding: 1em 1em;
@@ -97,6 +93,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: absolute;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     img {
         width: 6rem !important;
@@ -112,8 +113,34 @@
             text-transform: uppercase;
             font-weight: 600;
             font-size: 0.8rem;
+            position: relative;
             a {
                 text-decoration: none;
+            }
+            input[type="checkbox"] {
+                visibility: hidden;
+            }
+            .box {
+                width: 40px;
+                height: 10px;
+                position: relative;
+                border-radius: 3px;
+                position: absolute;
+                top: 25%;
+            }
+            .label {
+                display: block;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                transition: all 0.6s ease;
+                cursor: pointer;
+                position: absolute;
+                top: -3px;
+                left: -3px;
+            }
+            input[type="checkbox"]:checked + .label {
+                left: 27px;
             }
         }
     }
