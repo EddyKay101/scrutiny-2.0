@@ -1,0 +1,17 @@
+@import "./user/base/settings";
+
+:export {
+    primaryDark: $scrutiny-primary-dark;
+    secondaryDark: $scrutiny-secondary-dark;
+    tertiaryDark: $scrutiny-tertiary-dark;
+    accentsDark: $scrutiny-accents-dark;
+    backgroundDark: $scrutiny-background-dark;
+    miscDark: $scrutiny-misc-dark;
+
+    primaryLight: $scrutiny-primary-light;
+    secondaryLight: $scrutiny-secondary-light;
+    tertiaryLight: $scrutiny-tertiary-light;
+    accentsLight: $scrutiny-accents-light;
+    backgroundLight: $scrutiny-background-light;
+    miscLight: $scrutiny-misc-light;
+}
