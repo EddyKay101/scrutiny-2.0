@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
 
     }
 
-  }, [t])
+  }, [])
 
   useEffect(() => {
     let data = localStorage.getItem('state');
@@ -31,11 +31,6 @@ function MyApp({ Component, pageProps }) {
     }
 
   }, [])
-
-
-
-
-
 
   return (
     <SessionContext.Provider value={value}>
