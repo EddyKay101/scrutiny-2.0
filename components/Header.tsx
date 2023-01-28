@@ -40,19 +40,29 @@ export default function Header() {
     }
   }
   const componentStyles = (theme: Theme) => {
-    const socialIconStyes: CSS.Properties = {
-      color: `${theme.id === "dark" ? theme.color.primary : theme.color.accents}`,
-      background: `${theme.id === "dark" && theme.color.secondary}`
+    const socialIconStyes = {
+      color: `${theme.id === "dark" ? theme.color.secondary : theme.color.accents}`,
+      background: `${theme.id === "dark" ? theme.color.tertiary : theme.color.primary}`
     }
-
-
-    const headerStyle: CSS.Properties =
+    const headerStyle =
     {
       background: `${theme.color.primary}`
     }
+    const navLinkStyle =
+    {
+      color: `${theme.color.tertiary}`
+    }
+
+    const utilityLinkStyle = {
+      color: theme.id === "dark" ? theme.color.tertiary : theme.color.accents
+    }
+
+
     return {
       socialIconStyes,
-      headerStyle
+      headerStyle,
+      navLinkStyle,
+      utilityLinkStyle
     }
   }
   useEffect(() => {
@@ -64,27 +74,7 @@ export default function Header() {
 
   const Styles = useThemeAwareObject(componentStyles);
 
-  const svgStyles = {
-    st0: {
-      fill: 'none',
-      stroke: '#3C3C3B',
-      // strokeWidth: 14,
-      // strokeLinecap: 'round',
-      // strokeMiterlimit: 10
-    },
-    st1: {
-      fill: '#22264B'
-    },
-    st2: {
-      fill: '#3C3C3B'
-    },
-    st3: {
-      fill: '#E7BB6A'
-    },
-    st4: {
-      fill: '#23274B'
-    }
-  }
+
   return (
     <header style={Styles.headerStyle} className={'container-fluid ' + hClass}>
       <div className={`${hClass}__home-header`}>
@@ -101,9 +91,17 @@ export default function Header() {
         </div>
         <div className={`${hClass}__home-header__utility-icons`}>
           <div className="icons">
-            <a className="utility utility-bars" href="#"><FontAwesomeIcon icon={faBars} /></a>
-            <a className="utility utility-search" href="#"><FontAwesomeIcon icon={faSearchengin} /></a>
-            <a onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)} className="utility utility-phones" href="#"><FontAwesomeIcon icon={isHovered ? faHeadphones : faHeadphonesSimple} /></a>
+            <a style={{ ...Styles.utilityLinkStyle, color: isSocialHovered === 'utility-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link1')}
+              onMouseLeave={onMouseLeave}>
+              <FontAwesomeIcon icon={faBars} /></a>
+
+            <a style={{ ...Styles.utilityLinkStyle, color: isSocialHovered === 'utility-link2' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link2')}
+              onMouseLeave={onMouseLeave}>
+              <FontAwesomeIcon icon={faSearchengin} /></a>
+
+            <a style={{ ...Styles.utilityLinkStyle, color: isSocialHovered === 'utility-link3' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)} className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link3')}
+              onMouseLeave={onMouseLeave}>
+              <FontAwesomeIcon icon={isHovered ? faHeadphones : faHeadphonesSimple} /></a>
           </div>
         </div>
 
@@ -123,7 +121,7 @@ export default function Header() {
           <ul>
             <li>
               <Link href='news' passHref={true}>
-                <a>
+                <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link1')} onMouseLeave={onMouseLeave}>
                   News
                 </a>
 
@@ -131,7 +129,7 @@ export default function Header() {
             </li>
             <li>
               <Link href='reviews' passHref={true}>
-                <a>
+                <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link2' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link2')} onMouseLeave={onMouseLeave}>
                   Reviews
                 </a>
 
@@ -139,7 +137,7 @@ export default function Header() {
             </li>
             <li>
               <Link href='new-in' passHref={true}>
-                <a>
+                <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link3' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link3')} onMouseLeave={onMouseLeave}>
                   New In
                 </a>
 
@@ -147,7 +145,7 @@ export default function Header() {
             </li>
             <li>
               <Link href='playlist' passHref={true}>
-                <a>
+                <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link4' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link4')} onMouseLeave={onMouseLeave}>
                   Playlists
                 </a>
 
@@ -155,7 +153,7 @@ export default function Header() {
             </li>
             <li>
               <Link href='video' passHref={true}>
-                <a>
+                <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link5' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link5')} onMouseLeave={onMouseLeave}>
                   Video
                 </a>
 
@@ -163,7 +161,7 @@ export default function Header() {
             </li>
             <li>
               <Link href='merch' passHref={true}>
-                <a>
+                <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link6' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link6')} onMouseLeave={onMouseLeave}>
                   Merch
                 </a>
 
