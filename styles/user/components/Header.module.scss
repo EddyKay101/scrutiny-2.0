@@ -1,3 +1,6 @@
+.mainHeaderDIv {
+    position: relative;
+}
 .header {
     height: 25vh;
     position: relative;
@@ -88,6 +91,10 @@
                 }
             }
         }
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
     }
     &__nav-header {
         display: flex;
@@ -145,13 +152,18 @@
         }
     }
     transition: 0.3s;
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+    @media (min-width: 844px) and (max-width: 860px) {
+        height: 50vh;
+    }
 }
 
 .reduced {
     height: 10vh;
     transform: translateY(0);
     position: fixed;
-    background-color: $scrutiny-midnight-blue;
     &__home-header {
         display: flex;
         flex-direction: row;
@@ -228,6 +240,150 @@
                 color: $scrutiny-off-white;
             }
         }
+        input[type="checkbox"] {
+            visibility: hidden;
+        }
+        .box {
+            width: 30px;
+            height: 10px;
+            position: relative;
+            border-radius: 3px;
+            position: absolute;
+            top: 25%;
+        }
+        .label {
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            cursor: pointer;
+            position: absolute;
+            top: -3px;
+            left: -3px;
+        }
+        input[type="checkbox"]:checked + .label {
+            left: 27px;
+        }
     }
     transition: ease-in 0.3s;
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+.mobile-header {
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    &__mobile-logo {
+        width: 10%;
+        padding: 5px 5px 0, 5px;
+    }
+    &__icons {
+        width: 10%;
+
+        padding: 5px 5px 0, 5px;
+    }
+
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+    .icon-holder {
+        margin-top: 3px;
+    }
+    z-index: 0;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease-in-out;
+    text-align: left;
+    padding-top: 80px;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.9;
+    height: 100vh;
+    z-index: 1;
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+    ul {
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 1.2rem;
+            font-size: 40px;
+            font-weight: 500;
+            width: 100%;
+            padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem);
+            margin-right: auto;
+            margin-left: auto;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &.active {
+                    color: #00ffff;
+                }
+            }
+        }
+    }
+    &__close {
+        width: 8%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(-50%, 5%);
+    }
+
+    input[type="checkbox"] {
+        visibility: hidden;
+    }
+    .box {
+        width: 30px;
+        height: 10px;
+        position: relative;
+        border-radius: 3px;
+        position: absolute;
+        left: 4%;
+        // top: 25%;
+    }
+    .label {
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        transition: all 0.6s ease;
+        cursor: pointer;
+        position: absolute;
+        top: -3px;
+        left: -3px;
+    }
+    input[type="checkbox"]:checked + .label {
+        left: 27px;
+    }
+}
+@keyframes slide-in-right {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0;
+    }
+}
+@keyframes slide-out-right {
+    from {
+        right: 0;
+    }
+    to {
+        right: -100%;
+    }
 }

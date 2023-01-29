@@ -14,7 +14,7 @@ export default function Layout({ title, keywords, description, children, locatio
                 <link rel="icon" href="/favicon.svg" type="image/svg" sizes="32x32" />
             </Head>
             <Header />
-            <div className={`container-fluid ${location}`}>
+            <div className={`container-fluid ${location} layout-content`}>
                 {children}
             </div>
         </div>
