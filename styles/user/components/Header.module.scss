@@ -1,5 +1,6 @@
 .mainHeaderDIv {
     position: relative;
+    overflow-x: hidden;
 }
 .header {
     height: 25vh;
@@ -302,14 +303,15 @@
     text-align: left;
     padding-top: 80px;
     position: absolute;
-    right: -100%;
+    // right: -100%;
+    transform: translateX(0);
     top: 0;
     bottom: 0;
     width: 100%;
     opacity: 0.9;
     height: 100vh;
     z-index: 1;
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
         display: none;
     }
     ul {
@@ -373,17 +375,23 @@
 }
 @keyframes slide-in-right {
     from {
-        right: -100%;
+        transform: translateX(-100%);
     }
     to {
-        right: 0;
+        transform: translateX(0);
     }
+    // from {
+    //     right: -100%;
+    // }
+    // to {
+    //     right: 0;
+    // }
 }
 @keyframes slide-out-right {
     from {
-        right: 0;
+        transform: translateX(0);
     }
     to {
-        right: -100%;
+        transform: translateX(-100%);
     }
 }

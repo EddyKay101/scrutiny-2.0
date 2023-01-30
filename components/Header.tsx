@@ -135,161 +135,166 @@ export default function Header() {
 
 
   return (
-    <div className="mainHeaderDiv">
-      <header style={Styles.headerStyle} className={'container-fluid ' + hClass}>
-        <div className={`${hClass}__home-header`}>
-          <div className={`${hClass}__home-header__social-icons`}>
-            <div className="icons">
-              <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link1' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-fb" href="#"><FontAwesomeIcon icon={faFacebookF} onMouseEnter={() => onMouseEnter('link1')}
-                onMouseLeave={onMouseLeave} /></a>
-              <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link2' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-ig" href="#"><FontAwesomeIcon icon={faInstagram} onMouseEnter={() => onMouseEnter('link2')}
-                onMouseLeave={onMouseLeave} /></a>
-              <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link3' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-tw" href="#"><FontAwesomeIcon icon={faTwitter} onMouseEnter={() => onMouseEnter('link3')}
-                onMouseLeave={onMouseLeave} /></a>
+    <>
+      <div className="mainHeaderDiv">
+        <header style={Styles.headerStyle} className={'container-fluid ' + hClass}>
+          <div className={`${hClass}__home-header`}>
+            <div className={`${hClass}__home-header__social-icons`}>
+              <div className="icons">
+                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link1' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-fb" href="#"><FontAwesomeIcon icon={faFacebookF} onMouseEnter={() => onMouseEnter('link1')}
+                  onMouseLeave={onMouseLeave} /></a>
+                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link2' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-ig" href="#"><FontAwesomeIcon icon={faInstagram} onMouseEnter={() => onMouseEnter('link2')}
+                  onMouseLeave={onMouseLeave} /></a>
+                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link3' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-tw" href="#"><FontAwesomeIcon icon={faTwitter} onMouseEnter={() => onMouseEnter('link3')}
+                  onMouseLeave={onMouseLeave} /></a>
 
+              </div>
             </div>
-          </div>
-          <div className={`${hClass}__home-header__utility-icons`}>
-            <div className="icons">
+            <div className={`${hClass}__home-header__utility-icons`}>
+              <div className="icons">
 
-              <a style={{
-                ...Styles.utilityLinkStyle,
-                color: isSocialHovered === 'utility-link2' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}`,
-                boxShadow: isSocialHovered === 'utility-link2' && `${theme.id === 'light' ? `2px 0px 0px ${theme.color.accents}` : `2px 0px 0px ${theme.color.tertiary}`}`
-              }}
-                className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link2')}
-                onMouseLeave={onMouseLeave}>
-                <FontAwesomeIcon icon={faSearchengin} /></a>
+                <a style={{
+                  ...Styles.utilityLinkStyle,
+                  color: isSocialHovered === 'utility-link2' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}`,
+                  boxShadow: isSocialHovered === 'utility-link2' && `${theme.id === 'light' ? `2px 0px 0px ${theme.color.accents}` : `2px 0px 0px ${theme.color.tertiary}`}`
+                }}
+                  className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link2')}
+                  onMouseLeave={onMouseLeave}>
+                  <FontAwesomeIcon icon={faSearchengin} /></a>
 
-              <a style={{
-                ...Styles.utilityLinkStyle,
-                color: isSocialHovered === 'utility-link3' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}`,
-                boxShadow: isSocialHovered === 'utility-link3' && `${theme.id === 'light' ? `2px 0px 0px ${theme.color.accents}` : `2px 0px 0px ${theme.color.tertiary}`}`
-              }}
-                onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)} className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link3')}
-                onMouseLeave={onMouseLeave}>
-                <FontAwesomeIcon icon={isHovered ? faHeadphones : faHeadphonesSimple} /></a>
+                <a style={{
+                  ...Styles.utilityLinkStyle,
+                  color: isSocialHovered === 'utility-link3' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}`,
+                  boxShadow: isSocialHovered === 'utility-link3' && `${theme.id === 'light' ? `2px 0px 0px ${theme.color.accents}` : `2px 0px 0px ${theme.color.tertiary}`}`
+                }}
+                  onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)} className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link3')}
+                  onMouseLeave={onMouseLeave}>
+                  <FontAwesomeIcon icon={isHovered ? faHeadphones : faHeadphonesSimple} /></a>
+              </div>
             </div>
+
+          </div>
+          <div className={`${hClass}__nav-header`}>
+            <div className={`${imgDiv}`}>
+              <Link href='/' passHref={true}>
+                <a>
+                  <Image src={theme.id === 'dark' ? darkLogo : lightLogo} alt='logo' />
+
+                </a>
+
+              </Link>
+            </div>
+
+            <nav className={`${hClass}__nav`}>
+              <ul>
+                <li>
+                  <Link href='/news' passHref={true}>
+                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link1')} onMouseLeave={onMouseLeave}>
+                      News
+                    </a>
+
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/reviews' passHref={true}>
+                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link2' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link2')} onMouseLeave={onMouseLeave}>
+                      Reviews
+                    </a>
+
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/new-in' passHref={true}>
+                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link3' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link3')} onMouseLeave={onMouseLeave}>
+                      New In
+                    </a>
+
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/playlists' passHref={true}>
+                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link4' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link4')} onMouseLeave={onMouseLeave}>
+                      Playlists
+                    </a>
+
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/scrutiny-tv' passHref={true}>
+                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link5' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link5')} onMouseLeave={onMouseLeave}>
+                      Scrutiny Tv
+                    </a>
+
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/merch' passHref={true}>
+                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link6' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link6')} onMouseLeave={onMouseLeave}>
+                      Merch
+                    </a>
+
+                  </Link>
+                </li>
+
+
+                <li>
+                  <div style={isChecked ? { background: theme.color.tertiary } : { background: theme.color.misc }} className="box">
+                    <input id="checkbox" type="checkbox" checked={theme.id === 'dark' && true} onChange={handleChange} data-toggle="toggle" />
+                    <label style={isChecked ? { background: theme.color.secondary } : { background: theme.color.accents }} className="label" htmlFor="checkbox"></label>
+                  </div>
+                </li>
+
+              </ul>
+            </nav>
           </div>
 
-        </div>
-        <div className={`${hClass}__nav-header`}>
-          <div className={`${imgDiv}`}>
+        </header>
+
+        <header style={Styles.headerStyle} className='container mobile-header'>
+
+
+
+          <div className="mobile-header__mobile-logo">
             <Link href='/' passHref={true}>
               <a>
                 <Image src={theme.id === 'dark' ? darkLogo : lightLogo} alt='logo' />
-
               </a>
 
             </Link>
           </div>
+          <div className="mobile-header__icons">
+            <div className='icon-holder'>
+              {
+                !mobileMenuVisible &&
+                <a style={{
+                  ...Styles.utilityLinkStyle,
+                  color: isSocialHovered === 'utility-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}`
+                }}>
+                  <FontAwesomeIcon icon={faBars} onClick={handleMenuVisible} /></a>
+              }
 
-          <nav className={`${hClass}__nav`}>
-            <ul>
-              <li>
-                <Link href='/news' passHref={true}>
-                  <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link1')} onMouseLeave={onMouseLeave}>
-                    News
-                  </a>
-
-                </Link>
-              </li>
-              <li>
-                <Link href='/reviews' passHref={true}>
-                  <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link2' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link2')} onMouseLeave={onMouseLeave}>
-                    Reviews
-                  </a>
-
-                </Link>
-              </li>
-              <li>
-                <Link href='/new-in' passHref={true}>
-                  <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link3' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link3')} onMouseLeave={onMouseLeave}>
-                    New In
-                  </a>
-
-                </Link>
-              </li>
-              <li>
-                <Link href='/playlists' passHref={true}>
-                  <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link4' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link4')} onMouseLeave={onMouseLeave}>
-                    Playlists
-                  </a>
-
-                </Link>
-              </li>
-              <li>
-                <Link href='/scrutiny-tv' passHref={true}>
-                  <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link5' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link5')} onMouseLeave={onMouseLeave}>
-                    Scrutiny Tv
-                  </a>
-
-                </Link>
-              </li>
-              <li>
-                <Link href='/merch' passHref={true}>
-                  <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link6' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link6')} onMouseLeave={onMouseLeave}>
-                    Merch
-                  </a>
-
-                </Link>
-              </li>
-
-
-              <li>
-                <div style={isChecked ? { background: theme.color.tertiary } : { background: theme.color.misc }} className="box">
-                  <input id="checkbox" type="checkbox" checked={theme.id === 'dark' && true} onChange={handleChange} data-toggle="toggle" />
-                  <label style={isChecked ? { background: theme.color.secondary } : { background: theme.color.accents }} className="label" htmlFor="checkbox"></label>
-                </div>
-              </li>
-
-            </ul>
-          </nav>
-        </div>
-
-      </header>
-
-      <header style={Styles.headerStyle} className='container mobile-header'>
-
-
-
-        <div className="mobile-header__mobile-logo">
-          <Link href='/' passHref={true}>
-            <a>
-              <Image src={theme.id === 'dark' ? darkLogo : lightLogo} alt='logo' />
-            </a>
-
-          </Link>
-        </div>
-        <div className="mobile-header__icons">
-          <div className='icon-holder'>
-            {
-              !mobileMenuVisible &&
-              <a style={{
-                ...Styles.utilityLinkStyle,
-                color: isSocialHovered === 'utility-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}`
-              }}>
-                <FontAwesomeIcon icon={faBars} onClick={handleMenuVisible} /></a>
-            }
+            </div>
 
           </div>
 
-        </div>
 
 
 
 
+        </header>
 
-      </header>
+
+      </div>
       {
         mobileMenuVisible &&
         <div className="menu-items" style={{
           ...Styles.mobileMenuStyle,
-          animation: mobileMenuVisible ? 'slide-in-right 0.1s forwards' : 'slide-out-right 1s forwards'
+          animation: 'slide-in-right 0.1s forwards'
         }}>
           <div className="menu-items__close">
             <a style={{
               ...Styles.utilityLinkStyle,
+
               color: isSocialHovered === 'nav-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.primary : theme.color.secondary}`
             }}>
               <FontAwesomeIcon icon={faTimes} onClick={() => setVisible(false)} /></a>
@@ -353,8 +358,6 @@ export default function Header() {
           </ul>
         </div>
       }
-
-    </div>
-
+    </>
   )
 }
