@@ -20,11 +20,19 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 
+// const httpLink = new HttpLink({
+//     uri: `https://graphql.contentful.com/content/v1/spaces/v5y50stioip2`, // Server URL (must be absolute)
+//     headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer 6pUnN-Lhc_pwsWrwWzBmfeNzobTt8arCeHnnICxPcdk`,
+//     },
+// });
+
 const httpLink = new HttpLink({
-    uri: `https://graphql.contentful.com/content/v1/spaces/v5y50stioip2`, // Server URL (must be absolute)
+    uri: `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`, // Server URL (must be absolute)
     headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer 6pUnN-Lhc_pwsWrwWzBmfeNzobTt8arCeHnnICxPcdk`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_CONTENTFUL_API_KEY}`,
     },
 });
 

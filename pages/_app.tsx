@@ -29,25 +29,20 @@ function MyApp({ Component, pageProps }) {
       setValue(true);
       setTimeout(() => {
         localStorage.clear();
+        setValue(false);
       }, 1000 * 60 * 60);
     }
 
   }, [])
 
   return (
-
-    // 
-    <>
+    <SessionContext.Provider value={value}>
       <ThemeProvider initial={t === 'dark' ? DARK_THEME : LIGHT_THEME}>
-
         <ApolloProvider client={apolloClient}>
           <Component {...pageProps} />
         </ApolloProvider>
       </ThemeProvider>
-    </>
-
-    // </SessionContext.Provider>
-
+    </SessionContext.Provider>
 
   )
 }

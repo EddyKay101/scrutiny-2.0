@@ -1,9 +1,9 @@
-import { initializeApollo, addApolloState } from "@/lib/apollo-client";
+
 import Layout from "@/components/Layout";
 import { Theme } from '@/models/Theme.model';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useThemeAwareObject } from '@/hooks/ThemeAwareObject.hook';
-import { REVIEWS_QUERY } from "@/config/queries";
+
 const createStyles = (theme: Theme) => {
     const stl = {
         color: theme.color.accents,
@@ -14,21 +14,10 @@ const createStyles = (theme: Theme) => {
     return stl;
 }
 
-export async function getStaticProps() {
-    const apolloClient = initializeApollo();
-    const data = await apolloClient.query({
-        query: REVIEWS_QUERY
-    });
+const x = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
 
-    return addApolloState(apolloClient, {
-        props: {
-            data
-        },
-        revalidate: 60,
-    });
-}
 export default function HomePage({ data }) {
-    console.log(data);
+
     const { theme, setTheme, toggleTheme } = useTheme();
 
     const Styles = useThemeAwareObject(createStyles);

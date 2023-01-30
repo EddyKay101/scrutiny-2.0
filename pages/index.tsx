@@ -5,7 +5,24 @@ import Head from 'next/head';
 import HomePage from './home';
 import LandingPageImage from '@/components/LandingPageImage';
 import LandingPageOptions from '@/components/LandingPageOptions';
-export default function LandingPage() {
+
+import { initializeApollo, addApolloState } from "@/lib/apollo-client";
+import { REVIEWS_QUERY } from "@/config/queries";
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+  const data = await apolloClient.query({
+    query: REVIEWS_QUERY
+  });
+
+  return addApolloState(apolloClient, {
+    props: {
+      data
+    },
+    revalidate: 60,
+  });
+}
+export default function LandingPage({ data }) {
   const sess = useContext(SessionContext);
   const [loaded, setLoaded] = useState(false)
   const router = useRouter();
@@ -37,7 +54,7 @@ export default function LandingPage() {
             </div>
           </div>
           :
-          <HomePage />
+          <HomePage data={data} />
 
 
 
