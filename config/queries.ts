@@ -7,6 +7,9 @@ export const REVIEWS_QUERY = gql`
                 title
                 body
                 slug
+                image {
+                    url
+                }
             }
         }
     }

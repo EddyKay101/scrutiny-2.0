@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Header from './Header';
+import Header from '../Header';
 import { useTheme } from '@/contexts/ThemeContext';
 export default function Layout({ title, keywords, description, children, location }) {
 
