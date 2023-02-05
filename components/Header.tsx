@@ -187,7 +187,7 @@ export default function Header() {
 
             <nav className={`${hClass}__nav`}>
               <ul>
-                <li>
+                {/* <li>
                   <Link href='/news' passHref={true}>
                     <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link1')} onMouseLeave={onMouseLeave}>
                       News
@@ -218,7 +218,7 @@ export default function Header() {
                     </a>
 
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href='/scrutiny-tv' passHref={true}>
                     <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link5' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link5')} onMouseLeave={onMouseLeave}>
@@ -300,7 +300,7 @@ export default function Header() {
               <FontAwesomeIcon icon={faTimes} onClick={() => setVisible(false)} /></a>
           </div>
           <ul>
-            <li>
+            {/* <li>
               <Link href='/news' passHref={true}>
                 <a style={{ ...Styles.navLinkStyle, color: theme.id === 'light' ? theme.color.primary : theme.color.secondary }}>
                   News
@@ -331,7 +331,7 @@ export default function Header() {
                 </a>
 
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href='/scrutiny-tv' passHref={true}>
                 <a style={{ ...Styles.navLinkStyle, color: theme.id === 'light' ? theme.color.primary : theme.color.secondary }}>

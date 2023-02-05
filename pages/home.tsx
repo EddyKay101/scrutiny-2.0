@@ -4,11 +4,10 @@ import Layout from '@/components/Layout/Layout';
 import { Theme } from '@/models/Theme.model';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useThemeAwareObject } from '@/hooks/ThemeAwareObject.hook';
-import { Carousel } from "@/components/Carousel/Carousel";
-import { CarouselItem } from "@/components/Carousel/CarouselItem";
-import { SwiperSlide } from 'swiper/react';
+import { ScrCarousel } from "@/components/Carousel/ScrCarousel";
+
 import { initializeApollo, addApolloState } from "@/lib/apollo-client";
-import { REVIEWS_QUERY } from "@/config/queries";
+import { REVIEWS_QUERY, GENRE_QUERY } from "@/config/queries";
 const createStyles = (theme: Theme) => {
     const stl = {
         color: theme.color.accents,
@@ -22,7 +21,7 @@ const createStyles = (theme: Theme) => {
 export async function getStaticProps() {
     const apolloClient = initializeApollo();
     const data = await apolloClient.query({
-        query: REVIEWS_QUERY
+        query: GENRE_QUERY
     });
 
     return addApolloState(apolloClient, {
@@ -51,25 +50,8 @@ export default function HomePage({ data }: homePageProps) {
             keywords="scrutiny, scrutinyng, music"
             location='home-page'
         >
-            <div className="home-page container-fluid">
-                <Carousel>
-                    {
-                        data.data.reviewsCollection.items.map((item, index) => (
-                            <SwiperSlide key={index}>
-                                <div>ddd</div>
-                            </SwiperSlide>
-                        ))
-                    }
-
-                </Carousel>
-
-
-
-                <CarouselItem classname={"home-page-carousel-item"}>
-                    <div>
-
-                    </div>
-                </CarouselItem>
+            <div className="home-page">
+                <ScrCarousel payload={data?.data.allGenres} />
             </div>
         </Layout>
 

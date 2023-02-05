@@ -7,12 +7,12 @@ import LandingPageImage from '@/components/LandingPageImage';
 import LandingPageOptions from '@/components/LandingPageOptions';
 
 import { initializeApollo, addApolloState } from "@/lib/apollo-client";
-import { REVIEWS_QUERY } from "@/config/queries";
+import { REVIEWS_QUERY, GENRE_QUERY } from "@/config/queries";
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
   const data = await apolloClient.query({
-    query: REVIEWS_QUERY
+    query: GENRE_QUERY
   });
 
   return addApolloState(apolloClient, {
