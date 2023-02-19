@@ -3,6 +3,7 @@
     overflow-x: hidden;
 }
 .header {
+    z-index: 9999;
     height: 25vh;
     position: relative;
     &__home-header {
@@ -112,8 +113,9 @@
     }
 
     &__nav {
-        width: 60%;
+        width: 100%;
         ul {
+            padding: 0;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -162,6 +164,7 @@
 }
 
 .reduced {
+    z-index: 9999;
     height: 10vh;
     transform: translateY(0);
     position: fixed;
@@ -227,8 +230,9 @@
     }
 
     &__nav {
-        width: 60%;
+        width: 100%;
         ul {
+            padding: 0;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -293,7 +297,7 @@
     .icon-holder {
         margin-top: 3px;
     }
-    z-index: 0;
+    z-index: 50;
 }
 
 .menu-items {
@@ -310,7 +314,7 @@
     width: 100%;
     opacity: 0.9;
     height: 100vh;
-    z-index: 1;
+    z-index: 50;
     @include media-breakpoint-up(md) {
         display: none;
     }

@@ -4,12 +4,14 @@ import Link from "next/link";
 
 type Props = {
   children?: ReactNode;
-  classname?: any
+  className?: any;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void
 }
 
-export const CarouselItem = ({ children, classname }: Props) => {
+export const CarouselItem = ({ children, className, onMouseEnter, onMouseLeave }: Props) => {
   return (
-    <div className={classname}>
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={className}>
       {children}
     </div>
   )

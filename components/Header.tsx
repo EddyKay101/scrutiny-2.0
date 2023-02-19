@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import lightLogo from '@/public/scutiny-2-0-logo-complete_v2.svg';
 import darkLogo from '@/public/scutiny-2-0-logo-complete_dark.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,8 +11,6 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { useThemeAwareObject } from '@/hooks/ThemeAwareObject.hook';
 import { DARK_THEME } from '@/themes/Dark.theme';
 import { LIGHT_THEME } from '@/themes/Light.theme';
-import type * as CSS from 'csstype';
-import styled from 'styled-components'
 export default function Header() {
   function useHover() {
     const [isSocialHovered, setSocialHover] = useState(null);
@@ -187,38 +185,6 @@ export default function Header() {
 
             <nav className={`${hClass}__nav`}>
               <ul>
-                {/* <li>
-                  <Link href='/news' passHref={true}>
-                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link1' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link1')} onMouseLeave={onMouseLeave}>
-                      News
-                    </a>
-
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/reviews' passHref={true}>
-                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link2' ? `${theme.id === 'light' ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link2')} onMouseLeave={onMouseLeave}>
-                      Reviews
-                    </a>
-
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/new-in' passHref={true}>
-                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link3' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link3')} onMouseLeave={onMouseLeave}>
-                      New In
-                    </a>
-
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/playlists' passHref={true}>
-                    <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link4' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link4')} onMouseLeave={onMouseLeave}>
-                      Playlists
-                    </a>
-
-                  </Link>
-                </li> */}
                 <li>
                   <Link href='/scrutiny-tv' passHref={true}>
                     <a style={{ ...Styles.navLinkStyle, color: isSocialHovered === 'nav-link5' ? `${theme.id === "light" ? theme.color.tertiary : theme.color.secondary}` : `${theme.id === 'light' ? theme.color.accents : theme.color.tertiary}` }} onMouseEnter={() => onMouseEnter('nav-link5')} onMouseLeave={onMouseLeave}>
@@ -300,38 +266,6 @@ export default function Header() {
               <FontAwesomeIcon icon={faTimes} onClick={() => setVisible(false)} /></a>
           </div>
           <ul>
-            {/* <li>
-              <Link href='/news' passHref={true}>
-                <a style={{ ...Styles.navLinkStyle, color: theme.id === 'light' ? theme.color.primary : theme.color.secondary }}>
-                  News
-                </a>
-
-              </Link>
-            </li>
-            <li>
-              <Link href='/reviews' passHref={true}>
-                <a style={{ ...Styles.navLinkStyle, color: theme.id === 'light' ? theme.color.primary : theme.color.secondary }}>
-                  Reviews
-                </a>
-
-              </Link>
-            </li>
-            <li>
-              <Link href='/new-in' passHref={true}>
-                <a style={{ ...Styles.navLinkStyle, color: theme.id === 'light' ? theme.color.primary : theme.color.secondary }}>
-                  New In
-                </a>
-
-              </Link>
-            </li>
-            <li>
-              <Link href='/playlists' passHref={true}>
-                <a style={{ ...Styles.navLinkStyle, color: theme.id === 'light' ? theme.color.primary : theme.color.secondary }}>
-                  Playlists
-                </a>
-
-              </Link>
-            </li> */}
             <li>
               <Link href='/scrutiny-tv' passHref={true}>
                 <a style={{ ...Styles.navLinkStyle, color: theme.id === 'light' ? theme.color.primary : theme.color.secondary }}>

@@ -12,6 +12,7 @@ import { useTheme } from '@/contexts/ThemeContext';
 
 
 function MyApp({ Component, pageProps }) {
+  const { setTheme } = useTheme();
   const apolloClient = useApollo(pageProps)
   const [value, setValue] = useState(false);
   const [t, setT] = useState(typeof window !== 'undefined' && localStorage.getItem('theme'));
@@ -30,10 +31,11 @@ function MyApp({ Component, pageProps }) {
       setTimeout(() => {
         localStorage.clear();
         setValue(false);
+        setTheme(LIGHT_THEME);
       }, 1000 * 60 * 60);
     }
 
-  }, [])
+  }, [setTheme])
 
   return (
     <SessionContext.Provider value={value}>

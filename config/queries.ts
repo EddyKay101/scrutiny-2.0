@@ -25,6 +25,9 @@ export const GENRE_QUERY = gql`
                 image {
                     url
                 }
+                genreVideo {
+                    url
+                }
             }
         }
     }

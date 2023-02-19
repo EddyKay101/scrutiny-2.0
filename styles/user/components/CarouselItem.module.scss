@@ -1,17 +1,17 @@
 .item {
-    height: 400px;
+    height: 350px;
     position: relative;
-    z-index: 30;
-    padding: 0px 5px;
+    z-index: 0;
+    padding: 0;
 
     &__container {
         height: 100%;
-        position: absolute;
+        position: relative;
         z-index: 0;
     }
     &__text-container {
         width: 100%;
-        height: 400px;
+        height: 100%;
         &::after {
             content: "";
             position: absolute;
@@ -25,11 +25,38 @@
     }
 
     &__image {
-        // position: absolute;
         width: 100%;
         object-fit: cover;
         height: 100%;
         display: block;
         margin: "auto";
+    }
+    &__video-player-overlay {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        // z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: bottom 0.5s ease-in-out;
+    }
+    &__video-player-overlay.show {
+        bottom: 0;
+    }
+    &__video-player-overlay video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+    }
+}
+
+.react-multi-carousel-item {
+    @include media-breakpoint-down(md) {
+        // width: 338.5px !important;
     }
 }

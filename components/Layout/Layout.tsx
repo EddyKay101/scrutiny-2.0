@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Header from '../Header';
+import Footer from '../Footer';
 import { useTheme } from '@/contexts/ThemeContext';
 export default function Layout({ title, keywords, description, children, location }) {
 
@@ -18,6 +19,7 @@ export default function Layout({ title, keywords, description, children, locatio
             <div className={`container-fluid ${location} layout-content`}>
                 {children}
             </div>
+            <Footer />
         </div>
     )
 }
