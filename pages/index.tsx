@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '@/contexts/SessionContext';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import HomePage from './home';
+import HomePage from './home/index';
 import LandingPageImage from '@/components/LandingPageImage';
 import LandingPageOptions from '@/components/LandingPageOptions';
 

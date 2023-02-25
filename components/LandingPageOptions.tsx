@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap, Expo } from 'gsap';
 import OptionPanel from './OptionPanel';
-
+import { useRouter } from 'next/router';
 export default function LandingPageOptions() {
     const entry = useRef();
-
+    const router = useRouter();
     useEffect(() => {
         const tlEntry = gsap.timeline();
         tlEntry.from(entry.current, {
@@ -18,6 +18,8 @@ export default function LandingPageOptions() {
         }, '+=0.2')
     })
 
+
+
     return (
         <div className="container entry-options" ref={entry}>
             <div className="row entry-options__entry-container justify-content-around">
@@ -25,7 +27,8 @@ export default function LandingPageOptions() {
                 <OptionPanel
                     message="Continue to Scrutiny"
                     src="/videos/scrutiny_video.mp4"
-                    link={"/home"}
+                    link="/"
+
                 />
                 <OptionPanel
                     message="Music Player"

@@ -39,33 +39,35 @@ export default function Footer() {
   const Styles = useThemeAwareObject(componentStyles);
   return (
     <div className="container-fluid footer-container" style={Styles.footerContainerStyle}>
-      <div className="row">
-        <div className="col-md-9 col-12 mx-auto">
-          {/* <div className="container"> */}
-          <div className="footer-container__content mt-5">
-            <div className="row">
-              <div style={{ background: 'white' }} className="col-md-8 col-12">
-                hjvngh
-              </div>
-              <div className="col-md-4 col-12 d-flex">
-                <input style={Styles.subsriptionBox} type="email" name="" id="" className="footer-container__subscription-box" />
-                <div className="footer-container__mail-btn-container">
-                  <button className="footer-container__mail-btn-container--btn">
-                    <FontAwesomeIcon
-                      style={Styles.subcribeBtn}
-                      className="footer-container__mail-btn-container--icon" icon={faEnvelope} />
-                  </button>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 mx-auto">
+            <div className="footer-container__content mt-5">
+              <div className="row">
+                <div style={{ background: 'white' }} className="col-md-9 col-12">
+                  hjvngh
+                </div>
+                <div className="col-md-3 col-12 d-flex">
+                  <input style={Styles.subsriptionBox} type="email" name="" id="" className="footer-container__subscription-box" />
+                  <div className="footer-container__mail-btn-container">
+                    <button className="footer-container__mail-btn-container--btn">
+                      <FontAwesomeIcon
+                        style={Styles.subcribeBtn}
+                        className="footer-container__mail-btn-container--icon" icon={faEnvelope} />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div style={{ color: 'white' }} className="row">
-              <div className="col-md-6">a</div>
-              <div className="col-md-6">b</div>
+              <div style={{ color: 'white' }} className="row">
+                <div className="col-md-6">a</div>
+                <div className="col-md-6">b</div>
 
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   )
 }
