@@ -49,3 +49,17 @@ export const GENRE_DETAIL_QUERY = gql`
         }
     }
 `;
+export const ALL_NEWS_QUERY = gql`
+    query {
+        newsPageCollection {
+            items {
+                title
+                heroText
+                image {
+                    url
+                }
+                slug
+            }
+        }
+    }
+`;

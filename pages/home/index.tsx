@@ -10,6 +10,7 @@ import { initializeApollo, addApolloState } from "@/lib/apollo-client";
 import { REVIEWS_QUERY, GENRE_QUERY } from "@/config/queries";
 
 import NewsBlock from '@/components/NewsBlock';
+import { ALL_NEWS_QUERY } from '@/config/queries';
 const createStyles = (theme: Theme) => {
   const stl = {
     color: theme.color.accents,
@@ -22,24 +23,33 @@ const createStyles = (theme: Theme) => {
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
-  const data = await apolloClient.query({
+  const genre = await apolloClient.query({
     query: GENRE_QUERY
   });
+  const news = await apolloClient.query({
+    query: ALL_NEWS_QUERY
+  });
+
+  const res = await Promise.all([genre, news]).then(
+    (responses) => {
+      return responses
+    }
+  );
 
   return addApolloState(apolloClient, {
     props: {
-      data
+      res
     },
     revalidate: 60,
   });
 }
 
 type homePageProps = {
-  data?: any;
+  res?: any;
 }
 
 
-export default function HomePage({ data }: homePageProps) {
+export default function HomePage({ res }: homePageProps) {
 
   const { theme, setTheme, toggleTheme } = useTheme();
 
@@ -53,8 +63,8 @@ export default function HomePage({ data }: homePageProps) {
       location='home-page'
     >
       <div className="home-page">
-        <ScrCarousel payload={data?.data.allGenres} />
-        <NewsBlock />
+        <ScrCarousel payload={res[0]?.data.allGenres} />
+        <NewsBlock data={res[1].data} />
       </div>
     </Layout>
 

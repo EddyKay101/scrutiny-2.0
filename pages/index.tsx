@@ -8,21 +8,33 @@ import LandingPageOptions from '@/components/LandingPageOptions';
 
 import { initializeApollo, addApolloState } from "@/lib/apollo-client";
 import { REVIEWS_QUERY, GENRE_QUERY } from "@/config/queries";
+import { ALL_NEWS_QUERY } from '@/config/queries';
+
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
-  const data = await apolloClient.query({
+  const genre = await apolloClient.query({
     query: GENRE_QUERY
   });
+  const news = await apolloClient.query({
+    query: ALL_NEWS_QUERY
+  });
+
+  const res = await Promise.all([genre, news]).then(
+    (responses) => {
+      return responses
+    }
+  );
 
   return addApolloState(apolloClient, {
     props: {
-      data
+      res
     },
     revalidate: 60,
   });
 }
-export default function LandingPage({ data }) {
+
+export default function LandingPage({ res }) {
   const sess = useContext(SessionContext);
   const [loaded, setLoaded] = useState(false)
   const router = useRouter();
@@ -54,7 +66,7 @@ export default function LandingPage({ data }) {
             </div>
           </div>
           :
-          <HomePage data={data} />
+          <HomePage res={res} />
 
 
 

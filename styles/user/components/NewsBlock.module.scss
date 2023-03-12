@@ -1,4 +1,12 @@
 .news-block {
-    height: 100vh;
-    background: red;
+    padding-top: 2%;
+    padding-left: 2%;
+    &__right-now,
+    &__trending {
+        display: flex;
+        flex-direction: column;
+        .label {
+            border-bottom: 1px solid black;
+        }
+    }
 }
