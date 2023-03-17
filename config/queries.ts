@@ -59,6 +59,7 @@ export const ALL_NEWS_QUERY = gql`
                     url
                 }
                 slug
+                trending
             }
         }
     }

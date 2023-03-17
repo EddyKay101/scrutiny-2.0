@@ -9,6 +9,7 @@ export interface News {
                         url: string;
                     };
                     slug: string;
+                    trending: boolean;
                 }
             ];
         };

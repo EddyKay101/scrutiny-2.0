@@ -32,6 +32,9 @@
             "@/images/*": [
                 "public/images/*"
             ],
+            "@/pages/*": [
+                "pages/*"
+            ],
             "@/videos/*": [
                 "public/videos/*"
             ]
@@ -41,6 +44,12 @@
             "dom",
             "dom.iterable",
             "esnext"
+        ],
+        "types": [
+            "node",
+            "jest",
+            "@testing-library/jest-dom",
+            "cypress"
         ],
         "allowJs": true,
         "skipLibCheck": true,
@@ -58,9 +67,11 @@
     "include": [
         "next-env.d.ts",
         "**/*.ts",
-        "**/*.tsx"
+        "**/*.tsx",
+        "pages/_home.tst"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "cypress"
     ]
 }

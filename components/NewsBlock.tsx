@@ -1,7 +1,7 @@
 import NewsItem from "./NewsItem";
 import { News } from "@/models/News.model";
 const NewsBlock = ({ data }: News) => {
-  console.log(data)
+  const trendingNews = data.newsPageCollection.items.filter(item => item.trending === true);
   return (
     <div className="container news-block">
       <div className="row">
@@ -35,7 +35,7 @@ const NewsBlock = ({ data }: News) => {
           </div>
           <div className="row">
             {
-              data.newsPageCollection.items.map((item, index) => (
+              trendingNews.map((item, index) => (
                 <NewsItem key={index} payload={item} main={false} trending={true} />
               ))
             }
