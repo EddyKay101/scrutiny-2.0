@@ -61,8 +61,7 @@ export default function OptionPanel({ src, message, link, onClick }: Panel) {
 
     return (
         <div className="opt col-lg-4 col-md-5 col-xs-12">
-            {/* <Link href={link} shallow> */}
-            <a href={link}>
+            <a className={message.toLowerCase().replace(/\s/g, '') + "pnl"} href={link}>
                 <div className="option" ref={option} onMouseOver={mouseOver} onMouseOut={mouseOut} onClick={panelClick}>
                     <div className="option__option-message" ref={optionMessage}>
                         <h3 className="option__message">{message}</h3>
@@ -74,8 +73,6 @@ export default function OptionPanel({ src, message, link, onClick }: Panel) {
                     </div>
                 </div>
             </a>
-
-            {/* </Link> */}
         </div>
     )
 }
