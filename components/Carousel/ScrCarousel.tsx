@@ -4,7 +4,7 @@ import Link from "next/link";
 import MCarousel from 'react-multi-carousel';
 import { CarouselItem } from "./CarouselItem";
 import "react-multi-carousel/lib/styles.css";
-
+import { Genre } from "@/models/Genre.model";
 type Props = {
   data
   children?: ReactNode;
@@ -28,7 +28,7 @@ const responsive = {
   }
 };
 
-export const ScrCarousel = ({ payload }) => {
+export const ScrCarousel = ({ data }: Genre) => {
   const [hoverState, setHoverState] = useState({ isHovered: false, index: undefined });
 
   const handleMouseEnter = (i) => {
@@ -71,16 +71,27 @@ export const ScrCarousel = ({ payload }) => {
 
         swipeable>
         {
-          payload.items.map((payItem, index) => (
+
+          data.allGenres.items.map((payItem, index) => (
             <CarouselItem key={index} className={"container item"} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave}>
-              <div className="item__container" >
-                <div className="item__text-container">
-                  <img src={payItem.image.url} className="item__image" />
-                  <div className={`item__video-player-overlay ${hoverState.isHovered && hoverState.index === index ? 'show' : ''}`}>
-                    {payItem?.genreVideo?.url && <video src={payItem.genreVideo.url} autoPlay muted loop />}
+              <Link href={payItem.genre.tag}>
+                <a>
+                  <div data-item={payItem.genre.tag} className="item__container" >
+
+                    <div className="item__text-container">
+
+                      <img src={payItem.image.url} className="item__image" />
+                      <div className={`item__video-player-overlay ${hoverState.isHovered && hoverState.index === index ? 'show' : ''}`}>
+                        {payItem?.genreVideo?.url && <video src={payItem.genreVideo.url} autoPlay muted loop />}
+                        <div className="item__title">
+                          <p className="item__tag tag">{payItem.genre.tag}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </a>
+              </Link>
+
 
 
             </CarouselItem>

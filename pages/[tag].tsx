@@ -21,35 +21,10 @@ const createStyles = (theme: Theme) => {
   return stl;
 }
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-  const genre = await apolloClient.query({
-    query: GENRE_QUERY
-  });
-  const news = await apolloClient.query({
-    query: ALL_NEWS_QUERY
-  });
-
-  const res = await Promise.all([genre, news]).then(
-    (responses) => {
-      return responses
-    }
-  );
-
-  return addApolloState(apolloClient, {
-    props: {
-      res
-    },
-    revalidate: 60,
-  });
-}
-
-type homePageProps = {
-  res?: any;
-}
 
 
-export default function HomePage({ res }: homePageProps) {
+
+export default function Tag() {
 
   const { theme, setTheme, toggleTheme } = useTheme();
 
@@ -57,14 +32,13 @@ export default function HomePage({ res }: homePageProps) {
 
   return (
     <Layout
-      title='Scrutiny | Home'
-      description='A collation of items from Scrutiny site'
-      keywords="scrutiny, scrutinyng, music"
-      location='home-page'
+      title='Tag'
+      description=''
+      keywords=""
+      location=''
     >
-      <div className="home-page">
-        <ScrCarousel data={res[0]?.data} />
-        <NewsBlock data={res[1].data} />
+      <div>
+        Tags
       </div>
     </Layout>
 

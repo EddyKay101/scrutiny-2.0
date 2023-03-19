@@ -1,3 +1,4 @@
+import { Genre } from "@/models/Genre.model";
 export const genreData = {
     data: {
         allGenres: {

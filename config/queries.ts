@@ -64,3 +64,12 @@ export const ALL_NEWS_QUERY = gql`
         }
     }
 `;
+export const ALL_NEWS_QUERY_BY_TAG = gql`
+    query NewsByTag($tag: String) {
+        newsPageCollection(where: { tag: { tag: $tag } }) {
+            items {
+                title
+            }
+        }
+    }
+`;
