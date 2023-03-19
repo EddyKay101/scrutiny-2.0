@@ -1,11 +1,5 @@
 /// <reference types="cypress"/>
 
-// context("Landing Page", () => {
-//     beforeEach(() => {
-//         cy.visit("http://localhost:3000");
-//     });
-// });
-
 describe("landing page", () => {
     it("should hit the landing page", () => {
         cy.visit("http://localhost:3000");
