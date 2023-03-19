@@ -9,7 +9,6 @@ jobs:
             matrix:
                 node-version: [16.x]
         steps:
-            - uses: actions/checkout@v2
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v2
               with:
@@ -18,7 +17,7 @@ jobs:
               run: yarn install
             - name: Run Jest tests
               run: yarn test
-            - name: Checkout
+            - name: Scrutiny
               uses: actions/checkout@v2
 
             - name: Cypress run
