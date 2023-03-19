@@ -18,7 +18,9 @@ jobs:
               run: yarn install
             - name: Run Jest tests
               run: yarn test
-            - name: Start app
-              run: yarn dev
+            - name: Start Next.js app
+              run: yarn dev &
+            - name: Wait for app to start
+              run: sleep 10
             - name: Run Cypress tests
               run: yarn cypress run
