@@ -18,6 +18,7 @@ jobs:
               run: yarn install
             - name: Run Jest tests
               run: yarn test
-            - name: Run Cypress tests
+            - name: Start app
               run: yarn dev
+            - name: Run Cypress tests
               run: yarn cypress run
