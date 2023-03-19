@@ -19,4 +19,6 @@ jobs:
             - name: Run Jest tests
               run: yarn test
             - name: Run Cypress tests
+              run: yarn dev
+              run: sleep 10
               run: yarn cypress run
