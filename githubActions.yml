@@ -19,4 +19,4 @@ jobs:
             - name: Run Jest tests
               run: yarn test
             - name: Run Cypress tests
-              run: yarn cy:run
+              run: yarn cypress run
