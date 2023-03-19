@@ -20,7 +20,5 @@ jobs:
               run: yarn test
             - name: Start Next.js app
               run: yarn dev &
-            - name: Wait for app to start
-              run: sleep 10
             - name: Run Cypress tests
               run: yarn cypress run
