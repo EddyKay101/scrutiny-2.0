@@ -1,4 +1,5 @@
 .news-block {
+    position: relative;
     padding-top: 2%;
     padding-left: 2%;
     &__right-now,
@@ -8,5 +9,7 @@
         .label {
             border-bottom: 1px solid black;
         }
+    }
+    &__numbering {
     }
 }

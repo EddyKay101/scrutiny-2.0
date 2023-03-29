@@ -37,6 +37,9 @@
             ],
             "@/videos/*": [
                 "public/videos/*"
+            ],
+            "@/helpers/*": [
+                "helpers/*"
             ]
         },
         "target": "es5",

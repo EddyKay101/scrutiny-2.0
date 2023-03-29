@@ -87,7 +87,7 @@ export default function Header() {
     }
     const headerStyle =
     {
-      background: `${theme.color.primary}`
+      background: `${theme.color.background}`
     }
     const navLinkStyle =
     {

@@ -29,6 +29,7 @@ const customJestConfig = {
     '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
     '^@/lib/(.*)$': '<rootDir>/lib/$1',
     '^@/config/(.*)$': '<rootDir>/config/$1',
+    '^@/helpers/(.*)$': '<rootDir>/helpers/$1',
     "\\.(css|less|scss|sass)$": "jest-css-modules-transform"
 
   },

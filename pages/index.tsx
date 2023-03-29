@@ -45,7 +45,7 @@ export default function LandingPage({ res }) {
 
 
   return (
-    <div>
+    <>
 
       {
         loaded === false ?
@@ -73,7 +73,7 @@ export default function LandingPage({ res }) {
       }
 
 
-    </div>
+    </>
   )
 }
 

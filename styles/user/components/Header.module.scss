@@ -297,7 +297,7 @@
     .icon-holder {
         margin-top: 3px;
     }
-    z-index: 50;
+    z-index: 2000;
 }
 
 .menu-items {
@@ -307,14 +307,13 @@
     text-align: left;
     padding-top: 80px;
     position: absolute;
-    // right: -100%;
     transform: translateX(0);
     top: 0;
     bottom: 0;
     width: 100%;
     opacity: 0.9;
-    height: 100vh;
-    z-index: 50;
+    height: 100%;
+    z-index: 2000;
     @include media-breakpoint-up(md) {
         display: none;
     }

@@ -17,7 +17,7 @@ export default function Footer() {
 
   const componentStyles = (theme: Theme) => {
     const footerContainerStyle = {
-      background: `${theme.color.accents}`
+      background: `${theme.color.background}`
     }
     const subsriptionBox = {
       background: `${theme.color.primary}`,

@@ -73,9 +73,10 @@ export const ScrCarousel = ({ data }: Genre) => {
         {
 
           data.allGenres.items.map((payItem, index) => (
-            <CarouselItem key={index} className={"container item"} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave}>
-              <Link href={payItem.genre.tag}>
-                <a>
+            <Link key={index} href={payItem.genre.tag}>
+              <a>
+                <CarouselItem className={"container item"} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={handleMouseLeave}>
+
                   <div data-item={payItem.genre.tag} className="item__container" >
 
                     <div className="item__text-container">
@@ -84,17 +85,18 @@ export const ScrCarousel = ({ data }: Genre) => {
                       <div className={`item__video-player-overlay ${hoverState.isHovered && hoverState.index === index ? 'show' : ''}`}>
                         {payItem?.genreVideo?.url && <video src={payItem.genreVideo.url} autoPlay muted loop />}
                         <div className="item__title">
-                          <p className="item__tag tag">{payItem.genre.tag}</p>
+                          <p className="item__tag tag">{payItem.genre.tag.toUpperCase()}</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                </a>
-              </Link>
 
 
 
-            </CarouselItem>
+
+                </CarouselItem>
+              </a>
+            </Link>
           ))
         }
       </MCarousel>
