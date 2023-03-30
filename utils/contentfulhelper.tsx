@@ -57,7 +57,6 @@ class $contentfulHelper {
       include: 10,
     })
       .then((entries: any) => {
-        //console.log('Loaded Content ',entries.items[0]);
         params.set !== void (0) ? params.set(entries.items[0]) : null;
         params.callBack !== void (0) ? params.callBack() : null;
         return (entries.items[0]);
@@ -66,14 +65,14 @@ class $contentfulHelper {
   }
 
   getContentViaSlug(params: getPageContent) {
-    // console.log(params.slug.id,params.id);
+
     const payLoad = client.getEntries({
       'fields.slug': params.slug,
       'content_type': params.id,
       include: 10,
     })
       .then((entries: any) => {
-        // console.log(entries.items[0]) ;
+
         return (entries.items[0])
       })
     return payLoad;
@@ -86,7 +85,6 @@ class $contentfulHelper {
       include: 10,
     })
       .then((entries: any) => {
-        //log('Loaded Content ',entries.items);
         params.set !== void (0) ? params.set(entries) : null;
         params.callBack !== void (0) ? params.callBack() : null;
         return (entries.items);
@@ -102,7 +100,6 @@ class $contentfulHelper {
       include: 10,
     })
       .then((entries: any) => {
-        // console.log('Loaded Content ',entries.items);
         params.set !== void (0) ? params.set(entries.items) : null;
         params.callBack !== void (0) ? params.callBack() : null;
         return (entries.items);
@@ -167,12 +164,6 @@ class $contentfulHelper {
             placeholder="blur"
             blurDataURL={"https:" + node.data.target.fields.file.url + "?q=5"}
           />
-        ,
-        // <img className="d-block mx-auto my-5" src={`${node.data.target.fields.file.url}`}/>,
-
-        // 'asset-hyperlink': (node: any) =>
-        //   <a className="link-2" target="_blank" href={node.data.target.fields.file.url} rel="noreferrer">{node.data.target.fields.title}</a>,
-
       },
       renderText: (text) => {
         return text.split('\n').reduce((children, textSegment, index) => {

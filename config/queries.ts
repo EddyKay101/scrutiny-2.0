@@ -55,6 +55,7 @@ export const ALL_NEWS_QUERY = gql`
             items {
                 title
                 heroText
+                copy
                 image {
                     url
                 }

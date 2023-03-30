@@ -51,11 +51,23 @@
                 transition: filter 0.3s ease;
             }
         }
+        &__title-holder {
+            height: 80px;
+        }
         &__content-holder {
             margin-top: 16px;
             a {
                 text-decoration: none;
                 line-height: 20px;
+            }
+            .synopsis {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                font-size: 16px;
+                color: black;
             }
         }
     }

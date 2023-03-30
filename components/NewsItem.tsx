@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Theme } from '@/models/Theme.model';
-import { useTheme } from '@/contexts/ThemeContext';
 import { useThemeAwareObject } from '@/hooks/ThemeAwareObject.hook';
-import { DARK_THEME } from '@/themes/Dark.theme';
-import { LIGHT_THEME } from '@/themes/Light.theme';
 import { NewsItem } from "@/models/News.model";
+import { $c } from "utils/contentfulhelper";
 interface Props {
   payload: NewsItem;
   main: boolean;
@@ -36,17 +34,18 @@ const NewsItem = ({ payload, main, trending = false, number }: Props) => {
 
       {
         !main && trending === false &&
-        <div className={`news-container`}>
-          <div className="news-container__img-holder">
-            <img src={payload?.image?.url} alt={payload.title} className="news-image" />
-          </div>
+        <Link href="">
+          <a className="text-decoration-none">
+            <div className={`news-container`}>
+              <div className="news-container__img-holder">
+                <img src={payload?.image?.url} alt={payload.title} className="news-image" />
+              </div>
 
-          <div className="news-container__content-holder">
-            <span className="news-container__numbering">
-              <p style={{ ...Styles.numberingStyles }}>{number}</p>
-            </span>
-            <Link href="">
-              <a>
+              <div className="news-container__content-holder">
+                <span className="news-container__numbering">
+                  <p style={{ ...Styles.numberingStyles }}>{number}</p>
+                </span>
+
                 <h5>
                   <strong style={{ ...Styles.textStyles }}>
                     {payload?.title}
@@ -54,56 +53,72 @@ const NewsItem = ({ payload, main, trending = false, number }: Props) => {
 
                 </h5>
 
-              </a>
-            </Link>
-          </div>
-        </div>
+
+              </div>
+            </div>
+          </a>
+        </Link>
       }
 
       {
         main &&
-        <div className={`news-container-main`}>
-          <div className="news-container-main__img-holder">
-            <img src={payload?.image?.url} alt={payload.title} className="news-image" />
-          </div>
-          {
+        <Link href="">
+          <a className="text-decoration-none">
+            <div className={`news-container-main`}>
+              <div className="news-container-main__img-holder">
+                <img src={payload?.image?.url} alt={payload.title} className="news-image" />
+              </div>
 
-            <div className="news-container-main__content-holder">
-              <Link href="">
-                <a>
+
+              <div className="news-container-main__content-holder">
+                <div className="news-container-main__title-holder">
                   <h5>
-                    <strong>
+                    <strong style={{ ...Styles.textStyles }}>
                       {payload?.title}
                     </strong>
 
                   </h5>
+                </div>
 
-                </a>
-              </Link>
+                <div className="news-container-main__synopsis-holder">
+                  <p className="synopsis">{$c.markdown(payload?.copy)}</p>
+                </div>
+
+
+              </div>
+
             </div>
-          }
-        </div>
+          </a>
+        </Link>
       }
       {
         main === false && trending === true &&
-        <div className={`news-container-main`}>
-          {
+        <Link href="">
+          <a className="text-decoration-none">
+            <div className={`news-container-main`}>
 
-            <div className="news-container-main__content-holder">
-              <Link href="">
-                <a>
+
+              <div className="news-container-main__content-holder">
+
+                <div className="news-container-trending__title-holder">
                   <h5>
-                    <strong>
+                    <strong style={{ ...Styles.textStyles }}>
                       {payload?.title}
                     </strong>
 
                   </h5>
+                </div>
 
-                </a>
-              </Link>
+                <div className="news-container-main__synopsis-holder">
+                  <p className="synopsis">{$c.markdown(payload?.copy)}</p>
+                </div>
+
+
+              </div>
+
             </div>
-          }
-        </div>
+          </a>
+        </Link>
       }
 
 
