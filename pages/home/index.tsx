@@ -1,4 +1,5 @@
-
+import { useContext, useEffect, useState } from 'react';
+import { SessionContext } from '@/contexts/SessionContext';
 import dynamic from 'next/dynamic';
 import Layout from '@/components/Layout/Layout';
 import { Theme } from '@/models/Theme.model';
@@ -50,23 +51,33 @@ type homePageProps = {
 
 
 export default function HomePage({ res }: homePageProps) {
-
+  const sess = useContext(SessionContext);
+  const [loaded, setLoaded] = useState(false)
   const { theme, setTheme, toggleTheme } = useTheme();
 
   const Styles = useThemeAwareObject(createStyles);
-
+  useEffect(() => {
+    sess === false ? setLoaded(false) : setLoaded(true);
+  }, [sess])
   return (
-    <Layout
-      title='Scrutiny | Home'
-      description='A collation of items from Scrutiny site'
-      keywords="scrutiny, scrutinyng, music"
-      location='home-page'
-    >
-      <div className="home-page">
-        <ScrCarousel data={res[0]?.data} />
-        <NewsBlock data={res[1].data} />
-      </div>
-    </Layout>
+    <>
+      {
+        loaded &&
+        <Layout
+          title='Scrutiny | Home'
+          description='A collation of items from Scrutiny site'
+          keywords="scrutiny, scrutinyng, music"
+          location='home-page'
+        >
+          <div className="home-page">
+            <ScrCarousel data={res[0]?.data} />
+            <NewsBlock data={res[1].data} />
+          </div>
+        </Layout>
+
+      }
+    </>
+
 
   )
 }

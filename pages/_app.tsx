@@ -31,11 +31,11 @@ function MyApp({ Component, pageProps }) {
       setTimeout(() => {
         localStorage.clear();
         setValue(false);
-        setTheme(LIGHT_THEME);
+        setTheme(t === "light" ? LIGHT_THEME : DARK_THEME);
       }, 1000 * 60 * 60);
     }
 
-  }, [setTheme])
+  }, [setTheme, t])
 
   return (
     <SessionContext.Provider value={value}>
