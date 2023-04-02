@@ -20,7 +20,7 @@
     }
     &__mail-btn-container {
         &--btn {
-            height: 42px;
+            height: 44px;
             width: 44px;
             border: none;
             border-radius: 0;
@@ -29,7 +29,11 @@
             top: 0;
         }
         &--icon {
-            padding: 10px;
+            // padding: 16px;
+            // height: 44px;
+            // width: 44px;
+            height: 100% !important;
+            width: 80% !important;
         }
     }
     .logo {

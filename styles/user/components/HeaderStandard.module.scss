@@ -41,37 +41,49 @@
                 input[type="checkbox"]:checked + .label {
                     left: 27px;
                 }
+                position: absolute;
+                bottom: 0;
             }
             .social-icons {
                 position: absolute;
                 bottom: 0;
                 right: 0;
-
                 .icons {
                     display: flex;
                     justify-content: space-evenly;
                     height: 100%;
+                    margin-left: 16px;
+                    width: 100%;
                     .social {
                         display: inline-block;
                         border-radius: 60px;
                         transition: 0.2s;
+                        position: relative;
+                        height: 38.5px;
+                        width: 40px;
+                        .icn {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
                     }
                     .social-fb {
-                        padding: 1em 1.4em;
+                        padding: 1em 1em;
                         transition: 0.2s;
                         &:hover {
                             color: $facebook !important;
                         }
                     }
                     .social-ig {
-                        padding: 1em 1.4em;
+                        padding: 1em 1em;
                         transition: 0.2s;
                         &:hover {
                             color: $instagram !important;
                         }
                     }
                     .social-tw {
-                        padding: 1em 1.4em;
+                        padding: 1em 1em;
                         transition: 0.2s;
                         &:hover {
                             color: $twitter !important;

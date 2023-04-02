@@ -9,8 +9,9 @@ import { DARK_THEME } from '@/themes/Dark.theme';
 import { LIGHT_THEME } from '@/themes/Light.theme';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { useTheme } from '@/contexts/ThemeContext';
-
-
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 function MyApp({ Component, pageProps }) {
   const { setTheme } = useTheme();
   const apolloClient = useApollo(pageProps)

@@ -5,7 +5,9 @@ import { Theme } from '@/models/Theme.model';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useThemeAwareObject } from '@/hooks/ThemeAwareObject.hook';
 import { ScrCarousel } from "@/components/Carousel/ScrCarousel";
-
+import Head from 'next/head';
+import LandingPageImage from '@/components/LandingPageImage';
+import LandingPageOptions from '@/components/LandingPageOptions';
 import { initializeApollo, addApolloState } from "@/lib/apollo-client";
 import { REVIEWS_QUERY, GENRE_QUERY } from "@/config/queries";
 import { SessionContext } from '@/contexts/SessionContext';
@@ -36,19 +38,36 @@ export default function Tag() {
   return (
     <>
       {
-        loaded === true &&
+        loaded === true ?
 
-        <Layout
-          title='Tag'
-          description=''
-          keywords=""
-          location=''
-        >
+          <Layout
+            title='Tag'
+            description=''
+            keywords=""
+            location=''
+          >
+            <div>
+              Tags
+            </div>
+          </Layout> :
           <div>
-            Tags
+            <Head>
+              <title>Scrutiny | Welcome</title>
+              <link rel="icon" href="/favicon.svg" type="image/svg" sizes="32x32" />
+            </Head>
+
+            <div className="container-fluid main-content">
+              <div className="container-fluid main-content__entry">
+                <div className="main-content__image-and-options">
+                  <LandingPageImage />
+                  <LandingPageOptions />
+                </div>
+              </div>
+
+            </div>
           </div>
-        </Layout>
       }
+
     </>
 
 

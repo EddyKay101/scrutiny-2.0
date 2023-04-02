@@ -169,28 +169,26 @@ export default function HeaderStandard() {
                   <div className="col-4">
 
                   </div>
-                  <div className="col-4 checkB">
-
+                  <div className="col-4">
+                    <div className="checkB">
+                      <div style={isChecked ? { background: theme.color.tertiary } : { background: theme.color.misc }} className="box">
+                        <input id="checkbox" type="checkbox" checked={theme.id === 'dark' && true} onChange={handleChange} data-toggle="toggle" />
+                        <label style={isChecked ? { background: theme.color.secondary } : { background: theme.color.accents }} className="label" htmlFor="checkbox"></label>
+                      </div>
+                    </div>
                   </div>
                   <div className="col-4 social-icons">
                     <div className="row">
-                      <div className="col-2">
-                        <div className="checkB">
-                          <div style={isChecked ? { background: theme.color.tertiary } : { background: theme.color.misc }} className="box">
-                            <input id="checkbox" type="checkbox" checked={theme.id === 'dark' && true} onChange={handleChange} data-toggle="toggle" />
-                            <label style={isChecked ? { background: theme.color.secondary } : { background: theme.color.accents }} className="label" htmlFor="checkbox"></label>
-                          </div>
-                        </div>
-                      </div>
 
-                      <div className="col-10">
+
+                      <div className="col-12 position-relative">
                         <div className="icons">
                           <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link1' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-fb" href="#"><FontAwesomeIcon icon={faFacebookF} onMouseEnter={() => onMouseEnter('link1')}
-                            onMouseLeave={onMouseLeave} /></a>
+                            onMouseLeave={onMouseLeave} fixedWidth size="2x" className="icn" /></a>
                           <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link2' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-ig" href="#"><FontAwesomeIcon icon={faInstagram} onMouseEnter={() => onMouseEnter('link2')}
-                            onMouseLeave={onMouseLeave} /></a>
+                            onMouseLeave={onMouseLeave} fixedWidth size="2x" className="icn" /></a>
                           <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link3' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-tw" href="#"><FontAwesomeIcon icon={faTwitter} onMouseEnter={() => onMouseEnter('link3')}
-                            onMouseLeave={onMouseLeave} /></a>
+                            onMouseLeave={onMouseLeave} fixedWidth size="2x" className="icn" /></a>
                         </div>
                       </div>
                     </div>

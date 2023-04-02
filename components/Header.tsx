@@ -139,12 +139,12 @@ export default function Header() {
           <div className={`${hClass}__home-header`}>
             <div className={`${hClass}__home-header__social-icons`}>
               <div className="icons">
-                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link1' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-fb" href="#"><FontAwesomeIcon icon={faFacebookF} onMouseEnter={() => onMouseEnter('link1')}
-                  onMouseLeave={onMouseLeave} /></a>
-                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link2' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-ig" href="#"><FontAwesomeIcon icon={faInstagram} onMouseEnter={() => onMouseEnter('link2')}
-                  onMouseLeave={onMouseLeave} /></a>
-                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link3' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-tw" href="#"><FontAwesomeIcon icon={faTwitter} onMouseEnter={() => onMouseEnter('link3')}
-                  onMouseLeave={onMouseLeave} /></a>
+                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link1' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-fb" href="#"><FontAwesomeIcon className="icn" icon={faFacebookF} onMouseEnter={() => onMouseEnter('link1')}
+                  onMouseLeave={onMouseLeave} fixedWidth size="2x" /></a>
+                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link2' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-ig" href="#"><FontAwesomeIcon className="icn" icon={faInstagram} onMouseEnter={() => onMouseEnter('link2')}
+                  onMouseLeave={onMouseLeave} fixedWidth size="2x" /></a>
+                <a style={{ ...Styles.socialIconStyes, boxShadow: isSocialHovered === 'link3' ? `0px 0px 10px ${theme.id === "dark" ? theme.color.accents : theme.color.accents}` : `0px 0px 2px ${theme.id === "dark" ? theme.color.accents : theme.color.misc}` }} className="social social-tw" href="#"><FontAwesomeIcon className="icn" icon={faTwitter} onMouseEnter={() => onMouseEnter('link3')}
+                  onMouseLeave={onMouseLeave} fixedWidth size="2x" /></a>
 
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function Header() {
                 }}
                   className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link2')}
                   onMouseLeave={onMouseLeave}>
-                  <FontAwesomeIcon icon={faSearchengin} /></a>
+                  <FontAwesomeIcon icon={faSearchengin} fixedWidth size="2x" /></a>
 
                 <a style={{
                   ...Styles.utilityLinkStyle,
@@ -167,7 +167,7 @@ export default function Header() {
                 }}
                   onMouseOver={() => setHover(true)} onMouseOut={() => setHover(false)} className="utility utility-phones" href="#" onMouseEnter={() => onMouseEnter('utility-link3')}
                   onMouseLeave={onMouseLeave}>
-                  <FontAwesomeIcon icon={isHovered ? faHeadphones : faHeadphonesSimple} /></a>
+                  <FontAwesomeIcon icon={isHovered ? faHeadphones : faHeadphonesSimple} fixedWidth size="2x" /></a>
               </div>
             </div>
 

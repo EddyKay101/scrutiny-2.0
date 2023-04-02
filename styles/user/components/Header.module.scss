@@ -27,9 +27,18 @@
                     display: inline-block;
                     border-radius: 60px;
                     transition: 0.2s;
+                    position: relative;
+                    height: 38.5px;
+                    .icn {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
                 }
                 .social-fb {
-                    padding: 1em 1.4em;
+                    position: relative;
+                    padding: 1em 1em;
                     transition: 0.2s;
                     &:hover {
                         color: $facebook !important;

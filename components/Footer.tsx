@@ -25,8 +25,8 @@ export default function Footer() {
     }
 
     const subcribeBtn = {
-      background: theme.id === "dark" ? "#9B9898" : theme.color.primary,
-      color: theme.id === "light" ? theme.color.accents : theme.color.secondary
+      // background: theme.id === "dark" ? "#9B9898" : theme.color.primary,
+      color: theme.id === "light" ? theme.color.accents : theme.color.primary
     }
 
     const slogan = {
@@ -83,7 +83,7 @@ export default function Footer() {
                       <button className="footer-container__mail-btn-container--btn">
                         <FontAwesomeIcon
                           style={Styles.subcribeBtn}
-                          className="footer-container__mail-btn-container--icon" icon={faEnvelope} />
+                          className="footer-container__mail-btn-container--icon" icon={faEnvelope} fixedWidth size="2x" />
                       </button>
                     </div>
                   </div>
