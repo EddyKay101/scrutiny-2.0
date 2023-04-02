@@ -1,0 +1,9 @@
+.genre-standard {
+    &__first-section {
+        height: 100vh;
+        &--carousel {
+            // background: red;
+            height: 70%;
+        }
+    }
+}

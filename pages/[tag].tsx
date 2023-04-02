@@ -4,7 +4,7 @@ import Layout from '@/components/Layout/Layout';
 import { Theme } from '@/models/Theme.model';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useThemeAwareObject } from '@/hooks/ThemeAwareObject.hook';
-import { ScrCarousel } from "@/components/Carousel/ScrCarousel";
+import ImageText from '@/components/ImageText';
 import Head from 'next/head';
 import LandingPageImage from '@/components/LandingPageImage';
 import LandingPageOptions from '@/components/LandingPageOptions';
@@ -46,8 +46,19 @@ export default function Tag() {
             keywords=""
             location=''
           >
-            <div>
-              Tags
+            <div className="container genre-standard">
+              <div className="row genre-standard__first-section">
+                <div className="col-7 genre-standard__first-section--carousel">
+                  Tags
+                  <ImageText />
+                </div>
+                <div className="col-5">
+
+                </div>
+              </div>
+
+
+
             </div>
           </Layout> :
           <div>

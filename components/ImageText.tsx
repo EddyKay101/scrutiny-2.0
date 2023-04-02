@@ -10,27 +10,34 @@ import { $c } from "utils/contentfulhelper";
 //   number?: number;
 // }
 const ImageText = () => {
-  const newsItemThemeStyles = (theme: Theme) => {
-    const textStyles = {
-      color: `#000000`
-    };
-    const numberingStyles = {
-      color: theme.color.tertiary,
-      fontSize: "170px",
-      fontWeight: 900,
-      opacity: 0.4
+  const imageTextThemeStyles = (theme: Theme) => {
+    const overPanel = {
+      background: theme.color.primary,
+      color: theme.id === "dark" ? theme.color.secondary : theme.color.accents
     };
 
+
     return {
-      textStyles,
-      numberingStyles
+      overPanel,
     }
   }
 
-  const Styles = useThemeAwareObject(newsItemThemeStyles);
+  const Styles = useThemeAwareObject(imageTextThemeStyles);
   return (
-    <div>
+    <div className="row image-text">
+      <div className="col-12 image-text__container">
+        <img className="image-text__container--image" src="/images/pexels.jpg" alt="" />
 
+        <div className="image-text__container--text-content" style={{ ...Styles.overPanel }}>
+          <div className="title mx-auto py-3">
+            <h4><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</strong></h4>
+          </div>
+
+          <div className="synopsis mx-auto">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          </div>
+        </div>
+      </div>
     </div>
 
   )

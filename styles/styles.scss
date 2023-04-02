@@ -2,6 +2,7 @@
 @import "./user/base/base";
 @import "./user/pages/Home.module";
 @import "./user/pages/Landing.module";
+@import "./user/pages/GenreStandardPage.module";
 @import "./user/components/Spinner.module";
 @import "./user/components/LandingPageImage.module";
 @import "./user/components/LandingPageOptions.module";
@@ -13,3 +14,4 @@
 @import "./user/components/Footer.module";
 @import "./user/components/NewsBlock.module";
 @import "./user/components/NewsItem.module";
+@import "./user/components/ImageText.module";
