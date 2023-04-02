@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const REVIEWS_QUERY = gql`
-    query {
-        reviewsCollection {
+    query ReviewsByTag($tag: String) {
+        reviewsCollection(where: { genre: { tag: $tag } }) {
             items {
                 title
                 body
@@ -10,6 +10,16 @@ export const REVIEWS_QUERY = gql`
                 image {
                     url
                 }
+                isMostScrutinised
+                trending
+                # relatedCollection {
+                #     items {
+                #         image {
+                #             url
+                #         }
+                #         title
+                #     }
+                # }
             }
         }
     }
@@ -40,10 +50,6 @@ export const GENRE_DETAIL_QUERY = gql`
             items {
                 genre {
                     tag
-                }
-                title
-                genreImage {
-                    url
                 }
             }
         }

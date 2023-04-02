@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
         localStorage.clear();
         setValue(false);
         setTheme(t === "light" ? LIGHT_THEME : DARK_THEME);
-      }, 1000 * 60 * 60);
+      }, 24 * 60 * 60 * 1000);
     }
 
   }, [setTheme, t])
