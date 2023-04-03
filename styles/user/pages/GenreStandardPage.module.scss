@@ -3,7 +3,13 @@
         height: 100vh;
         &--carousel {
             // background: red;
-            height: 70%;
+            height: 60%;
+        }
+        &--news {
+            height: 60%;
+            &--container {
+                height: 100%;
+            }
         }
     }
 }

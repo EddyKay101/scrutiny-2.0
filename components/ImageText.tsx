@@ -6,7 +6,8 @@ import { $c } from "utils/contentfulhelper";
 import { RichTextContent, RichTextData } from "contentful";
 interface ImageTextItem {
   title: string;
-  body: RichTextData | RichTextContent;
+  body?: RichTextData | RichTextContent;
+  copy?: RichTextData | RichTextContent;
   image: {
     url: string;
   }
@@ -39,7 +40,13 @@ const ImageText = ({ payload }: Props) => {
           </div>
 
           <div className="synopsis mx-auto">
-            {$c.markdown(payload?.body)}
+            {
+              payload.body && $c.markdown(payload?.body)
+            }
+            {
+              payload.copy && $c.markdown(payload?.copy)
+            }
+
           </div>
         </div>
       </div>

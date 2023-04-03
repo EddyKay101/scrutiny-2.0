@@ -41,7 +41,7 @@
     "react-multi-carousel": "^2.8.2",
     "sass": "^1.49.11",
     "sass-loader": "^13.2.0",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.9",
     "swiper": "^9.2.0",
     "text-encoding": "^0.7.0"
   },

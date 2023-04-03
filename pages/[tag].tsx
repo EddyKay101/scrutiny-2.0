@@ -8,7 +8,7 @@ import { SessionContext } from '@/contexts/SessionContext';
 import { gql } from "@apollo/client";
 // models
 import { Theme } from '@/models/Theme.model';
-import { Reviews, ReviewsItem } from '@/models/Reviews.model';
+import { Reviews } from '@/models/Reviews.model';
 // hooks
 import { useTheme } from '@/contexts/ThemeContext';
 import { useThemeAwareObject } from '@/hooks/ThemeAwareObject.hook';
@@ -21,14 +21,19 @@ import LandingPageOptions from '@/components/LandingPageOptions';
 // Components
 import NewsBlock from '@/components/NewsBlock';
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import styled from "styled-components";
+import { Navigation } from 'swiper';
 import ImageText from '@/components/ImageText';
 
 // Queries
-import { REVIEWS_QUERY, GENRE_DETAIL_QUERY, ALL_NEWS_QUERY } from "@/config/queries";
+import { REVIEWS_QUERY, GENRE_DETAIL_QUERY, ALL_NEWS_QUERY, ALL_NEWS_QUERY_BY_TAG } from "@/config/queries";
 
 
-import "swiper/css";
-import "swiper/css/navigation";
+
+
+
 const createStyles = (theme: Theme) => {
   const stl = {
     color: theme.color.accents,
@@ -36,20 +41,30 @@ const createStyles = (theme: Theme) => {
 
   }
 
-  return stl;
+  const swiperArrow = {
+    color: "red"
+  }
+
+  return {
+    stl,
+    swiperArrow
+  }
 }
 
+
 export async function getStaticProps({ params }) {
-  console.log(params)
   const apolloClient = initializeApollo();
-  const reviews = await apolloClient.query({
+  const reviews: Reviews = await apolloClient.query({
     query: REVIEWS_QUERY,
     variables: {
       tag: params.tag
     }
   });
   const news = await apolloClient.query({
-    query: ALL_NEWS_QUERY
+    query: ALL_NEWS_QUERY_BY_TAG,
+    variables: {
+      tag: params.tag
+    }
   });
 
   const res = await Promise.all([reviews, news]).then(
@@ -78,19 +93,27 @@ export async function getStaticPaths() {
 
   }))
 
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
   return { paths, fallback: "blocking" }
 }
 
 
 
 export default function Tag({ res }) {
+  console.log(res[1])
+
+  const reviews: Reviews = res[0];
   const sess = useContext(SessionContext);
   const [loaded, setLoaded] = useState(false)
   const { theme, setTheme, toggleTheme } = useTheme();
 
   const Styles = useThemeAwareObject(createStyles);
+
+  const StyledSwiper = styled(Swiper)`
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #e7bb6a !important;
+  }
+`;
   useEffect(() => {
     sess === false ? setLoaded(false) : setLoaded(true);
   }, [sess])
@@ -107,15 +130,29 @@ export default function Tag({ res }) {
           >
             <div className="container genre-standard">
               <div className="row genre-standard__first-section">
-                <div className="col-7 genre-standard__first-section--carousel">
-                  Tags
-                  <Swiper className="carousel-swiper">
+                <div className="col-6 genre-standard__first-section--carousel">
 
-                  </Swiper>
-                  {/* <ImageText /> */}
+                  <StyledSwiper navigation={true} modules={[Navigation]} className="carousel-swiper">
+                    {
+                      reviews.data.reviewsCollection.items.map((item, index) => (
+                        <SwiperSlide key={index}>
+                          <ImageText payload={item} />
+                        </SwiperSlide>
+                      ))
+                    }
+                  </StyledSwiper>
+
                 </div>
-                <div className="col-5">
-
+                <div className="col-6 genre-standard__first-section--news">
+                  <div className="row genre-standard__first-section--news--container">
+                    {
+                      res[1].data.newsPageCollection.items.map((item, index) => (
+                        <div key={index} className={index === 0 ? "col-md-12 mb-md-2" : "col-md-6 mr-3"}>
+                          <ImageText payload={item} />
+                        </div>
+                      ))
+                    }
+                  </div>
                 </div>
               </div>
 

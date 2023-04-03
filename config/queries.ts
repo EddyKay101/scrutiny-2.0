@@ -12,14 +12,6 @@ export const REVIEWS_QUERY = gql`
                 }
                 isMostScrutinised
                 trending
-                # relatedCollection {
-                #     items {
-                #         image {
-                #             url
-                #         }
-                #         title
-                #     }
-                # }
             }
         }
     }
@@ -72,10 +64,14 @@ export const ALL_NEWS_QUERY = gql`
     }
 `;
 export const ALL_NEWS_QUERY_BY_TAG = gql`
-    query NewsByTag($tag: String) {
-        newsPageCollection(where: { tag: { tag: $tag } }) {
+    query ($tag: String) {
+        newsPageCollection(where: { tag: { tag: $tag }, trending: true }) {
             items {
                 title
+                image {
+                    url
+                }
+                copy
             }
         }
     }
