@@ -34,10 +34,48 @@ export const GENRE_QUERY = gql`
         }
     }
 `;
+export const GENRE_STANDARD_QUERY = gql`
+    query Genre($tag: String) {
+        genreStandardPageCollection(where: { genre: { tag: $tag } }) {
+            items {
+                genre {
+                    tag
+                }
+                title
+                reviewsBlockCollection(limit: 6) {
+                    items {
+                        ... on Reviews {
+                            title
+                            body
+                            slug
+                            image {
+                                url
+                            }
+                            isMostScrutinised
+                            trending
+                        }
+                    }
+                }
+                newsBlockCollection(limit: 6) {
+                    items {
+                        ... on NewsPage {
+                            title
+                            image {
+                                url
+                            }
+                            copy
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
 export const GENRE_DETAIL_QUERY = gql`
-    query {
+    query ($genre: String) {
         genreDetail: genreStandardPageCollection(
-            where: { genre: { tag: "afrobeats" } }
+            where: { genre: { tag: $genre } }
         ) {
             items {
                 genre {

@@ -1,3 +1,5 @@
+import { NewsItem } from "./News.model";
+import { ReviewsItem } from "./Reviews.model";
 export interface Genre {
     data: {
         allGenres: {
@@ -12,6 +14,26 @@ export interface Genre {
                     };
                     genreVideo: {
                         url: string;
+                    };
+                }
+            ];
+        };
+    };
+}
+
+export interface GenreStandardPage {
+    data: {
+        genreStandardPageCollection: {
+            items: [
+                {
+                    genre: {
+                        tag: string;
+                    };
+                    reviewsBlockCollection: {
+                        items: ReviewsItem[];
+                    };
+                    newsBlockCollection: {
+                        items: NewsItem[];
                     };
                 }
             ];

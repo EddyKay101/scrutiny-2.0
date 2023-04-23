@@ -1,4 +1,29 @@
 .genre-standard {
+    &__mini-menu {
+        &--menu-holder {
+            ul {
+                display: flex;
+                justify-content: space-between;
+                list-style: none;
+                text-align: left;
+                padding-left: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                @include media-breakpoint-down(md) {
+                    font-size: 12px;
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+        }
+        &--line {
+            border: 0.1px solid black;
+            height: 0.1px;
+            width: 100%;
+            margin: auto;
+        }
+    }
     &__first-section {
         height: 100vh;
         &--carousel {

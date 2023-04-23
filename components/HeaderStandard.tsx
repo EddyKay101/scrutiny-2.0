@@ -21,31 +21,61 @@ export default function HeaderStandard() {
     return { isSocialHovered, onMouseEnter, onMouseLeave };
   }
   const [isChecked, setChecked] = useState(false);
-  function useBoxCheck() {
+  // function useBoxCheck() {
 
+
+  //   const handleChange = () => {
+  //     if (typeof window !== 'undefined') {
+  //       const d = localStorage.getItem('theme')
+  //       if (d === "dark") {
+  //         localStorage.setItem('theme', 'light')
+  //         setTheme(LIGHT_THEME)
+  //         setChecked(false);
+  //       } else {
+  //         localStorage.setItem('theme', 'dark')
+  //         setTheme(DARK_THEME)
+  //         setChecked(true);
+  //       }
+  //     }
+  //   }
+
+
+
+  //   return { isChecked, handleChange };
+  // }
+
+  function useBoxCheck() {
+    const [isChecked, setChecked] = useState(false);
+
+    useEffect(() => {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        setChecked(true);
+        setTheme(DARK_THEME);
+      } else {
+        setChecked(false);
+        setTheme(LIGHT_THEME);
+      }
+    }, []);
 
     const handleChange = () => {
-
       if (typeof window !== 'undefined') {
-        const d = localStorage.getItem('theme')
-        if (d === "dark") {
-          localStorage.setItem('theme', 'light')
-          setTheme(LIGHT_THEME)
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === "dark") {
+          localStorage.setItem('theme', 'light');
+          setTheme(LIGHT_THEME);
           setChecked(false);
         } else {
-          localStorage.setItem('theme', 'dark')
-          setTheme(DARK_THEME)
-
+          localStorage.setItem('theme', 'dark');
+          setTheme(DARK_THEME);
           setChecked(true);
         }
-
       }
-
     }
-
 
     return { isChecked, handleChange };
   }
+
 
 
 
@@ -114,16 +144,21 @@ export default function HeaderStandard() {
 
 
 
-  useEffect(() => {
-    theme.id === 'dark' ? setChecked(true) : setChecked(false)
-  }, [theme]);
-
   // useEffect(() => {
-  //   window.addEventListener('scroll', listenScrollEvent);
+  //   theme.id === 'dark' ? setChecked(true) : setChecked(false)
+  // }, [theme]);
 
-  //   return () =>
-  //     window.removeEventListener('scroll', listenScrollEvent);
-  // }, []);
+  useEffect(() => {
+    const themePreference = localStorage.getItem('theme');
+    if (themePreference === 'dark') {
+      setTheme(DARK_THEME);
+      setChecked(true);
+    } else {
+      setTheme(LIGHT_THEME);
+      setChecked(false);
+    }
+  }, [setTheme]);
+
 
   const Styles = useThemeAwareObject(componentStyles);
 

@@ -16,13 +16,17 @@ function MyApp({ Component, pageProps }) {
   const { setTheme } = useTheme();
   const apolloClient = useApollo(pageProps)
   const [value, setValue] = useState(false);
-  const [t, setT] = useState(typeof window !== 'undefined' && localStorage.getItem('theme'));
+  // const [t, setT] = useState(typeof window !== 'undefined' && localStorage.getItem('theme'));
+  const [t, setT] = useState(
+    typeof window !== 'undefined' && localStorage.getItem('theme') || 'light'
+  );
+
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setT(() => localStorage.getItem('theme'))
-
+    let storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setT(storedTheme);
     }
-
   }, [])
 
   useEffect(() => {
@@ -41,6 +45,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <SessionContext.Provider value={value}>
       <ThemeProvider initial={t === 'dark' ? DARK_THEME : LIGHT_THEME}>
+        {/* <ThemeProvider initial={t === 'dark' ? DARK_THEME : LIGHT_THEME}> */}
         <ApolloProvider client={apolloClient}>
           <Component {...pageProps} />
         </ApolloProvider>
